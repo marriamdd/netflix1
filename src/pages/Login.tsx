@@ -1,12 +1,9 @@
-import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import Data from "../data.json";
-import { Link } from "react-router-dom";
+
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 export default function Login() {
-  const params = useParams();
-
   const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
   const [input, setInput] = useState("");
   const [inputClick, setInputClick] = useState(false);
@@ -21,24 +18,43 @@ export default function Login() {
     }
     setInputClick(true);
   };
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("submit");
-    if (!login) {
-      setInput("");
-    }
-  };
-  console.log(login);
+
+  // const handleGetStarted = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   console.log("submitted");
+  //   if (!login) {
+  //     setInput("");
+  //     console.log("clear");
+  //   }
+  // };
+
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
+
     console.log("lk");
     setInput(inputValue);
     console.log(input);
+
     if (gmailRegex.test(inputValue)) {
       setLogin(true);
       console.log("ki");
     } else {
       setLogin(false);
+    }
+  };
+
+  const signInFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("esmainc");
+  };
+  const handleGetStarted = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("submitted");
+    if (!login) {
+      setInput("");
+      console.log("clear");
+    } else {
+      window.location.href = "/Movies"; // Navigate to Movies page
     }
   };
 
@@ -48,10 +64,17 @@ export default function Login() {
         <div className="logoDiv">
           <img src="/assets/efe87fc48de87facd3a9555f467b33a8 (1).png" alt="" />
         </div>
-        <button onClick={HandleSighInClick}>Sign in</button>
+        <button onClick={HandleSighInClick}>Sign In</button>
       </Header>
       {sign ? (
-        <SignIn></SignIn>
+        <SignIn>
+          <h2>Sigh In</h2>
+          <SignInForm onSubmit={signInFormSubmit}>
+            <input type="text" />
+            <input type="password" />
+            <button type="submit">Sign In</button>
+          </SignInForm>
+        </SignIn>
       ) : (
         <LoginSection inputClick={inputClick}>
           <div>
@@ -61,7 +84,7 @@ export default function Login() {
               Ready to watch? Enter your email to create or restart your
               membership.
             </h3>
-            <form onSubmit={handleFormSubmit}>
+            <SignInForm onSubmit={handleGetStarted}>
               <label className="loginInputLabel" htmlFor="loginInput">
                 Email address
               </label>
@@ -72,24 +95,43 @@ export default function Login() {
                 value={input}
                 onChange={(e) => handleInput(e)}
                 type="email"
-                // placeholder="Email address"
               />
-            </form>
-            {login ? (
-              <Link type="submit" to={"/Movies"}>
-                Get Started
-              </Link>
-            ) : (
-              <Link type="submit" to={"/"}>
-                Get Started
-              </Link>
-            )}
+            </SignInForm>
+            <Link
+              to={login ? "/Movies" : "/"}
+              onClick={(e) => handleGetStarted(e)}
+            >
+              Get Started
+            </Link>
           </div>
         </LoginSection>
       )}
     </>
   );
 }
+const SignInForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 10rem;
+  justify-content: center;
+  align-items: center;
+  & > input {
+    width: 330px;
+    height: 50px;
+    padding-left: 2rem;
+    font-size: 2rem;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 4px;
+  }
+  & > button {
+    border-radius: 4px;
+    width: 330px;
+    height: 40px;
+    background-color: red;
+  }
+`;
 const Header = styled.header`
   margin-top: 3rem;
   margin-left: 3rem;
@@ -152,7 +194,7 @@ const LoginSection = styled.div<{ inputClick: boolean }>`
       font-weight: 400;
       line-height: 1.5;
     }
-    form {
+    & > form {
       position: relative;
       input {
         width: 280px;
@@ -183,7 +225,7 @@ const LoginSection = styled.div<{ inputClick: boolean }>`
       height: 48px;
       padding-block: 0.6rem;
       background-color: red;
-
+      border: none;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
       font-size: 2.4rem;
       border-radius: 4px;
