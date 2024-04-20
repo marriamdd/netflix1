@@ -45,7 +45,7 @@ export default function Login() {
 
       console.log("clear");
     } else {
-      window.location.href = "/Movies"; // Navigate to Movies page
+      window.location.href = "/MainPage";
     }
   };
 
@@ -75,7 +75,7 @@ export default function Login() {
             {error.empty && <p>{error.empty}</p>}
           </form>
           <Link
-            to={login ? "/Movies" : "/"}
+            to={login ? "/MainPage" : "/"}
             onClick={(e) => handleGetStarted(e)}
           >
             Get Started
@@ -86,10 +86,7 @@ export default function Login() {
     </>
   );
 }
-// const Error = styled.p`
-//   color: red;
-//   margin-right: 1rem;
-// `;
+
 const LoginSection = styled.div<{ inputClick: boolean }>`
   background-image: url("/assets/GE-en-20240415-popsignuptwoweeks-perspective_alpha_website_large.jpeg");
   margin-top: 0;

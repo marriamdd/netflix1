@@ -3,10 +3,12 @@ import "./App.css";
 
 import Login from "./pages/Login";
 import GlobalStyles from "./globalStyles/GlobalStyles";
-import Movies from "./pages/Movies";
+
 import Movie from "./pages/Movie";
 import SignIn from "./pages/SignIn";
 import Header from "./components/Header";
+import MyListPage from "./pages/MyListPage";
+import MainPage from "./pages/MainPage";
 
 function App() {
   return (
@@ -17,9 +19,10 @@ function App() {
         <Header />
         <Routes>
           <Route path={"/"} element={<Login />} />
-          <Route path={"/Movies"} element={<Movies />} />
-          <Route path={"/Movies/:title"} element={<Movie />} />
+          <Route path={"/MainPage"} element={<MainPage />} />
+          <Route path={"/MainPage/:title"} element={<Movie />} />
           <Route path={"/:SignIn"} element={<SignIn />} />
+          <Route path={"/MyList"} element={<MyListPage />} />
         </Routes>
       </BrowserRouter>
     </>
