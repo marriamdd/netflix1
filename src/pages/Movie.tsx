@@ -6,5 +6,5 @@ export default function Movie() {
 
   const currentmovie = Data.find((item) => item.title == title);
   console.log(currentmovie);
-  return <div>{currentmovie?.title}</div>;
+  return <div style={{ color: "black" }}>{currentmovie?.title}</div>;
 }
