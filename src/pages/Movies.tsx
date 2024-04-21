@@ -43,12 +43,12 @@ export default function Movies() {
   );
 }
 const MoviesContainer = styled.div`
-  padding-top: 9rem;
+  padding-block: 8rem;
   background-color: black;
   display: grid;
   gap: 1rem;
 
-  grid-template-columns: auto minmax(190px, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(162px, 1fr));
   & > div img {
     width: 100%;
     max-height: 100%;

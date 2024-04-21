@@ -27,7 +27,7 @@ function App() {
 
           <Route element={<Layout2 />}>
             <Route path={"/MainPage"} element={<MainPage />} />
-            <Route path={"/:title"} element={<Movie />} />
+            <Route path={"/single/:title"} element={<Movie />} />
             <Route path={"/MyList"} element={<MyListPage />} />
             <Route path={"/Movies"} element={<Movies />} />
           </Route>

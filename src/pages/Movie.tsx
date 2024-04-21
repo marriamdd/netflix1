@@ -5,12 +5,18 @@ export default function Movie() {
   const { title } = useParams();
   console.log(title);
 
-  const currentMovie = Data.find((item) => item.title == title);
-  console.log(currentMovie);
+  const currentMovie = Data.find(
+    (item) => item.title.replaceAll(" ", "_") === title
+  );
+  const formattedTitle = currentMovie?.title.replaceAll("_", " ");
+
+  console.log(currentMovie?.thumbnail.regular.small);
   return (
     <CurrentMovieContainer>
       <img src={currentMovie?.thumbnail.regular.small} alt="" />
-      <h1> {currentMovie?.title}</h1>
+      <img src="/assets/maxresdefault.jpg" alt="Sample Image" />
+
+      <h1>{formattedTitle}</h1>
     </CurrentMovieContainer>
   );
 }
@@ -19,6 +25,8 @@ const CurrentMovieContainer = styled.div`
   background-color: black;
   height: 100vh;
   img {
+    width: 100px;
+    height: 100px;
     margin-left: 2.2rem;
   }
   h1 {

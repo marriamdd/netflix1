@@ -22,6 +22,7 @@ export default function Header2() {
 const Header2Container = styled.div`
   display: flex;
   width: 100%;
+  padding: 1rem;
   justify-content: space-between;
   position: fixed;
   z-index: 99999;

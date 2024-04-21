@@ -3,6 +3,7 @@ import Data from "../data.json";
 import styled from "styled-components";
 export default function Preview() {
   const filteredData = Data.filter((item) => item.thumbnail?.trending?.small);
+
   return (
     <PreviewContainer>
       {" "}
@@ -10,8 +11,11 @@ export default function Preview() {
       <PreviewItems>
         {filteredData.map((item, index) => (
           <div key={index}>
-            <Link to={`/${item.title}`}>
-              {" "}
+            <Link
+              to={`/single/${decodeURIComponent(
+                item.title.replace(/\s/g, "_")
+              )}`}
+            >
               <img src={item.thumbnail.trending?.small} alt="" />
             </Link>
           </div>

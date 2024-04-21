@@ -27,10 +27,14 @@ export default function Footer() {
   );
 }
 const FooterContainer = styled.div`
+  background-color: black;
+  min-width: 80%;
   display: flex;
+  justify-content: space-around;
   position: fixed;
   bottom: 0;
   height: 60px;
+  align-self: center;
 
   img {
     width: 75px;

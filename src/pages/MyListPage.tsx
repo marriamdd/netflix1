@@ -39,7 +39,7 @@ export default function MyListPage() {
 }
 
 const MyListContainer = styled.div`
-  padding-top: 10rem;
+  padding-block: 8rem;
 
   background-color: black;
   display: grid;
