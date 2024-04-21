@@ -51,7 +51,6 @@ export default function Login() {
 
   return (
     <>
-      (
       <LoginSection inputClick={inputClick}>
         <div>
           <h1>Unlimited movies, TV shows, and more</h1>
@@ -82,14 +81,13 @@ export default function Login() {
           </Link>
         </div>
       </LoginSection>
-      )
     </>
   );
 }
 
 const LoginSection = styled.div<{ inputClick: boolean }>`
   background-image: url("/assets/GE-en-20240415-popsignuptwoweeks-perspective_alpha_website_large.jpeg");
-  margin-top: 0;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

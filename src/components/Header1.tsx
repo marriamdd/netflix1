@@ -19,27 +19,34 @@ export default function Header() {
   });
 
   return (
-    <Header1Container>
-      <div className="logoDiv">
-        <img src="/assets/efe87fc48de87facd3a9555f467b33a8 (1).png" alt="" />
-      </div>
+    <div style={{ position: "relative" }}>
+      <Header1Container>
+        <div className="logoDiv">
+          <Link to={"/"}>
+            <img
+              src="/assets/efe87fc48de87facd3a9555f467b33a8 (1).png"
+              alt=""
+            />
+          </Link>
+        </div>
 
-      {showSignInButton && <Link to={"SignIn"}>Sign In</Link>}
-    </Header1Container>
+        {showSignInButton && <Link to={"SignIn"}>Sign In</Link>}
+      </Header1Container>
+    </div>
   );
 }
 
 const Header1Container = styled.header`
-  margin-left: 3rem;
-  position: fixed;
-
+  /* position: fixed; */
+  position: absolute;
+  padding: 2rem;
   display: flex;
+  justify-content: space-between;
   width: 100%;
   justify-content: space-between;
   z-index: 99999;
 
   & > a {
-    margin-right: 7rem;
     background-color: red;
     height: 35px;
     border: none;
@@ -54,7 +61,6 @@ const Header1Container = styled.header`
     img {
       width: 80px;
       height: 40px;
-      background-color: transparent;
     }
   }
 `;
