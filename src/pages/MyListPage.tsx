@@ -39,7 +39,7 @@ export default function MyListPage() {
     <MylistContainer>
       {marked.map((item) => (
         <div key={Math.random()}>
-          <span style={{ color: "red" }}>{item.title}</span>
+          <img src={item.thumbnail.regular.small} alt="" />
         </div>
       ))}
     </MylistContainer>
@@ -47,8 +47,16 @@ export default function MyListPage() {
 }
 
 const MylistContainer = styled.div`
-  padding-top: 8rem;
-  color: red;
-  background-color: green;
-  height: 100vh;
+  padding-top: 10rem;
+
+  background-color: black;
+  display: grid;
+
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(162px, 1fr));
+  img {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 `;
