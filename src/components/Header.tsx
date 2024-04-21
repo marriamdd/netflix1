@@ -42,7 +42,7 @@ export default function Header() {
       {mainSection || myListPage ? (
         <div className="navLinksContainer">
           <Link to={"/MyList"}>My List</Link>
-          <Link to={"/MainPage"}>Movies</Link>
+          <Link to={"/Movies"}>Movies</Link>
         </div>
       ) : null}
 

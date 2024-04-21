@@ -9,6 +9,7 @@ import SignIn from "./pages/SignIn";
 import Header from "./components/Header";
 import MyListPage from "./pages/MyListPage";
 import MainPage from "./pages/MainPage";
+import Movies from "./pages/Movies";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path={"/:title"} element={<Movie />} />
           <Route path={"/:SignIn"} element={<SignIn />} />
           <Route path={"/MyList"} element={<MyListPage />} />
+          <Route path={"/Movies"} element={<Movies />} />
         </Routes>
       </BrowserRouter>
     </>
