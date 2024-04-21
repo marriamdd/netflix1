@@ -7,6 +7,7 @@ export default function Movies() {
     getMovies();
   }, []);
   const [movies, setMovies] = useState<Movie[]>([]);
+  //   const [mark,setMark]=useState
   async function getMovies() {
     try {
       let i = 0;
@@ -32,7 +33,10 @@ export default function Movies() {
       {movies.map((item) => (
         <div key={Math.random()}>
           <img src={item.thumbnail.regular.small} alt="" />
-          <p>{item.title}</p>
+          <div className="markDiv">
+            <p>{item.title}</p>
+            <img src="/assets/icon-bookmark-empty.svg" alt="" />
+          </div>
         </div>
       ))}
     </MoviesContainer>
@@ -45,13 +49,23 @@ const MoviesContainer = styled.div`
   gap: 1rem;
 
   grid-template-columns: auto minmax(190px, 1fr);
-  img {
+  & > div img {
     width: 100%;
     max-height: 100%;
   }
-  p {
-    padding-top: 0.5rem;
-    font-size: 1.5rem;
-    color: #fffefe;
+
+  .markDiv {
+    padding-top: 1rem;
+    padding-left: 2rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    & > p {
+      color: #fffefe;
+    }
+
+    & > img {
+      width: 15px;
+    }
   }
 `;
