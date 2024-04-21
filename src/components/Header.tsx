@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
+import MyListPage from "../pages/MyListPage";
 
 export default function Header() {
   const location = useLocation();
@@ -8,7 +9,7 @@ export default function Header() {
   console.log(pathname);
   const [showSignInButton, setShowSignInButton] = useState(true);
   const [mainSection, setMainSection] = useState(false);
-
+  const [myListPage, setMyListPage] = useState(false);
   useEffect(() => {
     if (pathname === "/" || "") {
       setShowSignInButton(true);
@@ -17,24 +18,28 @@ export default function Header() {
     }
     if (pathname.replace("/", "") === "MainPage") {
       setMainSection(true);
-      console.log("mmm");
+    }
+    if (pathname.replace("/", "") === "MyList") {
+      setMyListPage(true);
     }
     [];
   });
   return (
     <HeaderContainer mainSection={mainSection}>
       <div className="logoDiv">
-        {mainSection ? (
-          <img
-            style={{ width: "35px" }}
-            src="/assets/51cec8ced2b272fc2e11ad1d6d6a29e8.png"
-            alt=""
-          />
+        {mainSection || myListPage ? (
+          <Link to={"/MainPage"}>
+            <img
+              style={{ width: "35px" }}
+              src="/assets/51cec8ced2b272fc2e11ad1d6d6a29e8.png"
+              alt=""
+            />
+          </Link>
         ) : (
           <img src="/assets/efe87fc48de87facd3a9555f467b33a8 (1).png" alt="" />
         )}
       </div>
-      {mainSection ? (
+      {mainSection || myListPage ? (
         <div className="navLinksContainer">
           <Link to={"/MyList"}>My List</Link>
           <Link to={"/MainPage"}>Movies</Link>

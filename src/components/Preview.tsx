@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Data from "../data.json";
 import styled from "styled-components";
 export default function Preview() {
@@ -9,7 +10,10 @@ export default function Preview() {
       <PreviewItems>
         {filteredData.map((item, index) => (
           <div key={index}>
-            <img src={item.thumbnail.trending?.small} alt="" />
+            <Link to={`/${item.title}`}>
+              {" "}
+              <img src={item.thumbnail.trending?.small} alt="" />
+            </Link>
           </div>
         ))}
       </PreviewItems>
