@@ -7,7 +7,7 @@ export default function Movies() {
     getMovies();
   }, []);
   const [movies, setMovies] = useState<Movie[]>([]);
-  //   const [mark,setMark]=useState
+
   async function getMovies() {
     try {
       let i = 0;
@@ -18,7 +18,7 @@ export default function Movies() {
         if (!response || !response.data) {
           break;
         }
-        if (data.category) {
+        if (data.category == "Movie") {
           setMovies((prev) => [...prev, data]);
         }
         i++;
@@ -35,7 +35,11 @@ export default function Movies() {
           <img src={item.thumbnail.regular.small} alt="" />
           <div className="markDiv">
             <p>{item.title}</p>
-            <img src="/assets/icon-bookmark-empty.svg" alt="" />
+            {item.isBookmarked ? (
+              <img src="/assets/icon-bookmark-full.svg" alt="" />
+            ) : (
+              <img src="/assets/icon-bookmark-empty.svg" alt="" />
+            )}
           </div>
         </div>
       ))}
