@@ -1,4 +1,3 @@
-import Data from "../data.json";
 import styled from "styled-components";
 import { Movie } from "../types";
 
