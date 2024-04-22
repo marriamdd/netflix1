@@ -49,15 +49,9 @@ function App() {
 
           <Route element={<Layout2 />}>
             <Route path={"/MainPage"} element={<MainPage />} />
-            <Route path={"/single/:title"} element={<Movie />} />
-            <Route
-              path={"/MyList"}
-              element={<MyListPage setData={setData} data={data} />}
-            />
-            <Route
-              path={"/Movies"}
-              element={<Movies setData={setData} data={data} />}
-            />
+            <Route path={"/single/:title"} element={<Movie data={data} />} />
+            <Route path={"/MyList"} element={<MyListPage data={data} />} />
+            <Route path={"/Movies"} element={<Movies data={data} />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,12 +1,6 @@
 import styled from "styled-components";
 
-export default function MyListPage({
-  setData,
-  data,
-}: {
-  setData: (data: Movie[]) => void;
-  data: Movie[];
-}) {
+export default function MyListPage({ data }: { data: Movie[] }) {
   console.log(data);
   return (
     <MyListContainer>

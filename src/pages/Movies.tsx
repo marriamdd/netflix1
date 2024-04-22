@@ -1,38 +1,6 @@
-import { useEffect } from "react";
 import styled from "styled-components";
 
-export default function Movies({
-  setData,
-  data,
-}: {
-  setData: (data: Movie[]) => void;
-  data: Movie[];
-}) {
-  // useEffect(() => {
-  //   getMovies();
-  // }, []);
-  // const [movies, setMovies] = useState<Movie[]>([]);
-
-  // async function getMovies() {
-  //   try {
-  //     let i = 0;
-  //     while (true) {
-  //       const response = await axios(`http://localhost:3000/${i}`);
-  //       const data = response.data;
-  //       console.log(data);
-  //       if (!response || !response.data) {
-  //         break;
-  //       }
-  //       if (data.category == "Movie") {
-  //         setMovies((prev) => [...prev, data]);
-  //       }
-  //       i++;
-  //     }
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //   }
-  // }
-
+export default function Movies({ data }: { data: Movie[] }) {
   return (
     <MoviesContainer>
       {data
