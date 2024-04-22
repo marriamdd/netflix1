@@ -3,27 +3,23 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { Movie } from "../types";
-export default function Preview({ data }: { data: Movie }) {
+export default function Preview({ data }: { data: Movie[] }) {
   const randomMovie: Movie[] = data;
   console.log(randomMovie.length);
+
   let randomIds = [];
   for (let i = 0; i <= 10; i++) {
     let random = Math.floor(Math.random() * randomMovie.length + 1);
     randomIds.push(random);
   }
-  console.log(randomIds);
-  console.log("esdata", data);
   const filteredData = data.filter((item: Movie) =>
     randomIds.includes(+item.id)
   );
-  console.log(filteredData);
+
   return (
     <PreviewContainer>
-      {" "}
       <span>Previews</span>
       <PreviewItems>
-        {}
-
         {filteredData.map((item) => (
           <div key={Math.random()}>
             <Link
