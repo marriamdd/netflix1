@@ -4,7 +4,7 @@ import Add_Play_Info_Section from "../components/Add_Play_Info_Section";
 import PopularOnNetflix from "../components/PopularOnNetflix";
 import Footer from "../components/Footer";
 import { Movie } from "../types";
-export default function MainPage({ data }: { data: Movie }) {
+export default function MainPage({ data }: { data: Movie[] }) {
   console.log("l");
   return (
     <>

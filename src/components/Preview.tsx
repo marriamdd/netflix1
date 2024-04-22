@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { Movie } from "../types";
 export default function Preview({ data }: { data: Movie[] }) {
   const randomMovie: Movie[] = data;
-  console.log(randomMovie.length);
 
   let randomIds = [];
   for (let i = 0; i <= 10; i++) {
