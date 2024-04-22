@@ -1,22 +1,37 @@
 import { Link } from "react-router-dom";
-import Data from "../data.json";
-import styled from "styled-components";
-export default function Preview() {
-  const filteredData = Data.filter((item) => item.thumbnail?.trending?.small);
 
+import styled from "styled-components";
+
+import { Movie } from "../types";
+export default function Preview({ data }: { data: Movie }) {
+  const randomMovie: Movie[] = data;
+  console.log(randomMovie.length);
+  let randomIds = [];
+  for (let i = 0; i <= 10; i++) {
+    let random = Math.floor(Math.random() * randomMovie.length + 1);
+    randomIds.push(random);
+  }
+  console.log(randomIds);
+  console.log("esdata", data);
+  const filteredData = data.filter((item: Movie) =>
+    randomIds.includes(+item.id)
+  );
+  console.log(filteredData);
   return (
     <PreviewContainer>
       {" "}
       <span>Previews</span>
       <PreviewItems>
-        {filteredData.map((item, index) => (
-          <div key={index}>
+        {}
+
+        {filteredData.map((item) => (
+          <div key={Math.random()}>
             <Link
               to={`/single/${decodeURIComponent(
                 item.title.replace(/\s/g, "_")
               )}`}
             >
-              <img src={item.thumbnail.trending?.small} alt="" />
+              <img src={item.thumbnail.regular.small} alt="" />
             </Link>
           </div>
         ))}

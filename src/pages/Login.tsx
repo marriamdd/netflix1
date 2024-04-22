@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Location, useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -33,7 +33,7 @@ export default function Login() {
       setLogin(false);
     }
   };
-
+  const navigate = useNavigate();
   const handleGetStarted = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
@@ -45,7 +45,7 @@ export default function Login() {
 
       console.log("clear");
     } else {
-      window.location.href = "/MainPage";
+      navigate("/MainPage");
     }
   };
 

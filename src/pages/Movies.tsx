@@ -1,6 +1,22 @@
+import { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
+import { Movie } from "../types";
 
-export default function Movies({ data }: { data: Movie[] }) {
+export default function Movies({
+  data,
+  setData,
+}: {
+  data: Movie[];
+  setData: Dispatch<SetStateAction<Movie[]>>;
+}) {
+  const toggleBookMark = (clickedTitle: string) => {
+    const updatedData = data.map((item) =>
+      item.title === clickedTitle
+        ? { ...item, isBookmarked: !item.isBookmarked }
+        : item
+    );
+    setData(updatedData);
+  };
   return (
     <MoviesContainer>
       {data
@@ -10,11 +26,16 @@ export default function Movies({ data }: { data: Movie[] }) {
             <img src={item.thumbnail.regular.small} alt="" />
             <div className="markDiv">
               <p>{item.title}</p>
-              {item.isBookmarked ? (
-                <img src="/assets/icon-bookmark-full.svg" alt="" />
-              ) : (
-                <img src="/assets/icon-bookmark-empty.svg" alt="" />
-              )}
+
+              <img
+                onClick={() => toggleBookMark(item.title)}
+                src={
+                  item.isBookmarked
+                    ? "/assets/icon-bookmark-full.svg"
+                    : "/assets/icon-bookmark-empty.svg"
+                }
+                alt=""
+              />
             </div>
           </div>
         ))}

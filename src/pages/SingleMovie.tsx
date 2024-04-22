@@ -1,7 +1,8 @@
-import Data from "../data.json";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
-export default function Movie({ data }: { data: Movie[] }) {
+import { Movie } from "../types";
+
+export default function SingleMovie({ data }: { data: Movie[] }) {
   const { title } = useParams();
   console.log("title", title);
   console.log("data", data);
@@ -13,15 +14,14 @@ export default function Movie({ data }: { data: Movie[] }) {
   console.log(currentMovie?.thumbnail.regular.small);
   return (
     <CurrentMovieContainer>
-      <p style={{ color: "red" }}>weffe</p>
       <img src={currentMovie?.thumbnail.regular.small} alt="" />
-      <img src="/assets/maxresdefault.jpg" alt="Sample Image" />
+
       <h1>{formattedTitle}</h1>
     </CurrentMovieContainer>
   );
 }
 const CurrentMovieContainer = styled.div`
-  padding-top: 6rem;
+  padding-top: 9rem;
   background-color: black;
   height: 100vh;
   img {

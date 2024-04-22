@@ -1,21 +1,28 @@
 import styled from "styled-components";
-import { useState } from "react";
+import React, { useState } from "react";
 export default function SignIn() {
   const signInFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("esmainc");
+    if (emailInput && passwordInput) {
+      window.location.href = "/MainPage";
+    }
   };
-  const [sign, setSign] = useState(false);
+  const [emailInput, setEmailInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
   const [email_numberClick, setEmail_numberClick] = useState(false);
-  const HandleSighInClick = () => {
-    setSign(true);
-  };
 
   const handleInputClick = () => {
     if (email_numberClick) {
       setEmail_numberClick(false);
     }
     setEmail_numberClick(true);
+  };
+  const handleEmail_input = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmailInput(e.target.value);
+  };
+  const handlePassword_input = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPasswordInput(e.target.value);
+    console.log("aaa");
   };
   return (
     <div>
@@ -30,6 +37,8 @@ export default function SignIn() {
               Email or phone number
             </label>
             <input
+              value={emailInput}
+              onChange={handleEmail_input}
               onClick={handleInputClick}
               name="emailORnumberInput"
               id="emailORnumberInput"
@@ -38,12 +47,16 @@ export default function SignIn() {
           </div>
           <div>
             <label htmlFor="passwordInput">Password</label>
-            <input name="passwordInput" id="passwordInput" type="password" />
+            <input
+              value={passwordInput}
+              onChange={handlePassword_input}
+              name="passwordInput"
+              id="passwordInput"
+              type="password"
+            />
           </div>
 
-          <button onClick={HandleSighInClick} type="submit">
-            Sign In
-          </button>
+          <button type="submit">Sign In</button>
         </SignInForm>
         <div className="forgetDiv">
           <p style={{ fontSize: "1.5rem" }}>Forget Password?</p>

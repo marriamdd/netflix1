@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Movie } from "../types";
 
 export default function MyListPage({ data }: { data: Movie[] }) {
   console.log(data);

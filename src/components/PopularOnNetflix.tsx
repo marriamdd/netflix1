@@ -1,18 +1,21 @@
 import Data from "../data.json";
 import styled from "styled-components";
+import { Movie } from "../types";
 
-export default function PopularOnNetflix() {
-  const filteredData = Data.filter((item) => item.thumbnail?.trending?.small);
+export default function PopularOnNetflix({ data }: { data: Movie }) {
+  // const filteredData = Data.movies.filter(
+  //   (item) => item.thumbnail?.trending?.small
+  // );
   return (
     <PopularContainer>
       {" "}
       <span>Popular On Netflix</span>
       <PopularItems>
-        {filteredData.map((item, index) => (
+        {/* {filteredData.map((item, index) => (
           <div key={index}>
             <img src={item.thumbnail.trending?.small} alt="" />
           </div>
-        ))}
+        ))} */}
       </PopularItems>
     </PopularContainer>
   );

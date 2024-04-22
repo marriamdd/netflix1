@@ -1,4 +1,4 @@
-interface Thumbnail {
+export interface Thumbnail {
   trending: {
     small: string;
     large: string;
@@ -10,7 +10,8 @@ interface Thumbnail {
   };
 }
 
-interface Movie {
+export interface Movie {
+  id: string;
   title: string;
   thumbnail: Thumbnail;
   year: number;
