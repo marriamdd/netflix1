@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MoviesContainer = styled.div`
+export const MoviesStyledContainer = styled.div`
   padding-block: 8rem;
 
   display: grid;

@@ -3,40 +3,45 @@ import styled from "styled-components";
 export default function Footer() {
   return (
     <FooterContainer>
-      <img
-        src="public/assets/footer/Screenshot 2024-04-21 at 3.40.08 AM.png"
-        alt=""
-      />
-      <img
-        src="public/assets/footer/Screenshot 2024-04-21 at 3.40.53 AM.png"
-        alt=""
-      />
-      <img
-        src="public/assets/footer/Screenshot 2024-04-21 at 3.41.18 AM.png"
-        alt=""
-      />
-      <img
-        src="public/assets/footer/Screenshot 2024-04-21 at 3.41.27 AM.png"
-        alt=""
-      />
-      <img
-        src="public/assets/footer/Screenshot 2024-04-21 at 3.41.36 AM.png"
-        alt=""
-      />
+      <div>
+        <img src="/assets/footer/line-md_home-simple.svg" alt="home icon" />
+        <span>Home</span>
+      </div>
+      <div>
+        <img src="/assets/footer/feather_search.svg" alt="search icon" />
+        <span>Search</span>
+      </div>
+      <div>
+        <img src="/assets/footer/Vector.svg" alt="coming soon" />
+        <span>Coming Soon</span>
+      </div>
+      <div>
+        <img src="/assets/footer/fe_download.svg" alt="downloads icon" />
+        <span>Downloads</span>
+      </div>
+      <div>
+        <img src="/assets/footer/Vector (1).svg" alt="" />
+        <span>More</span>
+      </div>
     </FooterContainer>
   );
 }
 const FooterContainer = styled.div`
-  background-color: black;
-  min-width: 80%;
+  position: fixed;
+  bottom: 0rem;
   display: flex;
   justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  height: 60px;
-  align-self: center;
-
-  img {
-    width: 75px;
+  width: 100%;
+  background-color: black;
+  padding: 1rem;
+  & > div {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 2.4rem;
+      height: 2.4rem;
+    }
   }
 `;

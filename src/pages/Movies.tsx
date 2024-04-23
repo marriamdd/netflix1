@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
-import styled from "styled-components";
+
 import { Movie } from "../types";
-import { MoviesContainer } from "../styleComponents/moviesContainer";
+import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
 
 export default function Movies({
   data,
@@ -19,7 +19,7 @@ export default function Movies({
     setData(updatedData);
   };
   return (
-    <MoviesContainer>
+    <MoviesStyledContainer>
       {data
         .filter((item) => item.category == "Movie")
         .map((item) => (
@@ -40,6 +40,6 @@ export default function Movies({
             </div>
           </div>
         ))}
-    </MoviesContainer>
+    </MoviesStyledContainer>
   );
 }

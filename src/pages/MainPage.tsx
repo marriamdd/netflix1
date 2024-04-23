@@ -16,7 +16,6 @@ export default function MainPage({ data }: { data: Movie[] }) {
           <Preview data={data} />
         </Main>
       </MainPageContainer>
-      <Footer />
     </>
   );
 }
@@ -25,9 +24,10 @@ const MainPageContainer = styled.div`
 `;
 const Main = styled.main``;
 const PageIntro = styled.div`
-  width: 100%;
-  height: 260px;
-  background-image: url("/assets/adry9XA.jpg");
+  width: 424.046px;
+  height: 415px;
+  flex-shrink: 0;
+  background-image: url("/assets/Rectangle 26.png");
   background-position: 0px 0px;
   background-size: cover;
   background-repeat: no-repeat;

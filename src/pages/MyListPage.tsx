@@ -1,11 +1,10 @@
-import styled from "styled-components";
 import { Movie } from "../types";
-import { MoviesContainer } from "../styleComponents/moviesContainer";
+import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
 
 export default function MyListPage({ data }: { data: Movie[] }) {
   console.log(data);
   return (
-    <MoviesContainer>
+    <MoviesStyledContainer>
       {data
         .filter((item) => item.isBookmarked)
         .map((item) => (
@@ -13,6 +12,6 @@ export default function MyListPage({ data }: { data: Movie[] }) {
             <img src={item.thumbnail.regular.small} alt="" />
           </div>
         ))}
-    </MoviesContainer>
+    </MoviesStyledContainer>
   );
 }
