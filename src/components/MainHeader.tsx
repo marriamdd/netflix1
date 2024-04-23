@@ -5,11 +5,7 @@ export default function MainHeader() {
   return (
     <Header2Container>
       <Link to={"/MainPage"}>
-        <img
-          style={{ width: "35px" }}
-          src="/assets/51cec8ced2b272fc2e11ad1d6d6a29e8.png"
-          alt=""
-        />
+        <img src="/assets/design/logos_netflix-icon.svg" alt="" />
       </Link>
 
       <NavLinksContainer>
@@ -25,8 +21,12 @@ const Header2Container = styled.div`
   width: 100%;
   padding: 1rem;
   justify-content: space-between;
-  position: fixed;
+  position: absolute;
   z-index: 99999;
+  & > a img {
+    width: 5.3rem;
+    height: 5.7rem;
+  }
 `;
 const NavLinksContainer = styled.div`
   gap: 2rem;
@@ -35,11 +35,13 @@ const NavLinksContainer = styled.div`
   align-items: center;
   & > a {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: white;
+    color: #fff;
+    text-align: center;
     text-decoration: none;
+    font-size: 1.7rem;
+    font-style: normal;
     font-weight: 400;
-    font-size: 1.4rem;
-    padding-top: 0.5rem;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+    line-height: 30.447px;
+    letter-spacing: 0.762px;
   }
 `;
