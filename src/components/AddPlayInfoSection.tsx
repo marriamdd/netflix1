@@ -23,7 +23,7 @@ export default function () {
 }
 
 const Container = styled.div`
-  padding-top: 1rem;
+  padding-bottom: 1rem;
   background-color: black;
   display: flex;
   justify-content: space-around;

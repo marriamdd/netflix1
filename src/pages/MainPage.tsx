@@ -1,28 +1,27 @@
 import styled from "styled-components";
 import Preview from "../components/Preview";
-import Add_Play_Info_Section from "../components/Add_Play_Info_Section";
 import PopularOnNetflix from "../components/PopularOnNetflix";
-
 import { Movie } from "../types";
+import AddPlayInfoSection from "../components/AddPlayInfoSection";
 export default function MainPage({ data }: { data: Movie[] }) {
   console.log("l");
   return (
     <>
       <MainPageContainer>
         <PageIntro />
-        <Add_Play_Info_Section />
+        <AddPlayInfoSection />
         <Main>
-          <PopularOnNetflix data={data} />
           <Preview data={data} />
+          <PopularOnNetflix data={data} />
         </Main>
       </MainPageContainer>
     </>
   );
 }
-const MainPageContainer = styled.div`
-  margin-bottom: 30px;
+const MainPageContainer = styled.div``;
+const Main = styled.main`
+  padding-bottom: 9rem;
 `;
-const Main = styled.main``;
 const PageIntro = styled.div`
   width: 100%;
   height: 415px;

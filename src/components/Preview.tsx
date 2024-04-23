@@ -37,11 +37,13 @@ export default function Preview({ data }: { data: Movie[] }) {
 
 const PreviewContainer = styled.div`
   background-color: black;
-  height: 240px;
+  margin: 2rem;
   span {
-    font-size: 3rem;
-    padding: 1rem;
+    font-size: 26.748px;
+
     font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.073px;
   }
 `;
 const PreviewItems = styled.div`
@@ -49,13 +51,13 @@ const PreviewItems = styled.div`
   gap: 0.5rem;
   overflow-x: auto;
 
-  width: 370px;
+  width: 360px;
 
   img {
     margin-top: 1.5rem;
-    width: 150px;
-    height: 150px;
-    border-radius: 10%;
-    /* overflow-x: auto; */
+    width: 102px;
+    height: 102px;
+    flex-shrink: 0;
+    border-radius: 102px;
   }
 `;

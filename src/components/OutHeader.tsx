@@ -22,10 +22,7 @@ export default function OutHeader() {
       <Header1Container>
         <div className="logoDiv">
           <Link to={"/"}>
-            <img
-              src="/assets/efe87fc48de87facd3a9555f467b33a8 (1).png"
-              alt=""
-            />
+            <img src="/assets/design/logos_netflix.svg" alt="" />
           </Link>
         </div>
 
@@ -56,10 +53,10 @@ const Header1Container = styled.header`
     font-size: 1.8rem;
     text-decoration: none;
   }
-  .logoDiv {
+  /* .logoDiv {
     img {
       width: 80px;
       height: 40px;
     }
-  }
+  } */
 `;

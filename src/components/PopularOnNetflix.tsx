@@ -21,9 +21,11 @@ const PopularContainer = styled.div`
   background-color: black;
   height: 170px;
   span {
-    font-size: 3rem;
-    padding: 1rem;
+    padding-left: 1.5rem;
+    font-size: 20.921px;
     font-weight: 700;
+    line-height: 15.643px;
+    letter-spacing: -0.057px;
   }
 `;
 const PopularItems = styled.div`
@@ -31,13 +33,13 @@ const PopularItems = styled.div`
   gap: 0.5rem;
   overflow-x: auto;
 
-  width: 370px;
+  width: 360px;
 
   img {
     margin-top: 1.5rem;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    /* overflow-x: auto; */
+    width: 103px;
+    height: 161px;
+    flex-shrink: 0;
+    border-radius: 2px;
   }
 `;

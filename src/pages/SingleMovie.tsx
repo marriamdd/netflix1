@@ -4,8 +4,7 @@ import { Movie } from "../types";
 
 export default function SingleMovie({ data }: { data: Movie[] }) {
   const { title } = useParams();
-  console.log("title", title);
-  console.log("data", data);
+
   const currentMovie = data.find(
     (item) => item.title.replaceAll(" ", "_") === title
   );

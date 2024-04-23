@@ -2,6 +2,7 @@ import { Dispatch, SetStateAction } from "react";
 
 import { Movie } from "../types";
 import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
+import axios from "axios";
 
 export default function Movies({
   data,
@@ -10,9 +11,12 @@ export default function Movies({
   data: Movie[];
   setData: Dispatch<SetStateAction<Movie[]>>;
 }) {
-  const toggleBookMark = (clickedTitle: string) => {
+  const toggleBookMark = (clickedItem: Movie) => {
+    axios.patch(`http://localhost:3000/movies/${clickedItem.id}`, {
+      isBookmarked: !clickedItem.isBookmarked,
+    });
     const updatedData = data.map((item) =>
-      item.title === clickedTitle
+      item.id === clickedItem.id
         ? { ...item, isBookmarked: !item.isBookmarked }
         : item
     );
@@ -29,7 +33,7 @@ export default function Movies({
               <p>{item.title}</p>
 
               <img
-                onClick={() => toggleBookMark(item.title)}
+                onClick={() => toggleBookMark(item)}
                 src={
                   item.isBookmarked
                     ? "/assets/icon-bookmark-full.svg"

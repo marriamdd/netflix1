@@ -14,6 +14,7 @@ import axios from "axios";
 import { Movie } from "./types";
 import SingleMovie from "./pages/SingleMovie";
 import TVshows from "./pages/TVshows";
+import Search from "./pages/Search";
 
 function App() {
   const [data, setData] = useState<Movie[]>([]);
@@ -55,6 +56,7 @@ function App() {
               path={"/Movies"}
               element={<Movies data={data} setData={setData} />}
             />
+            <Route path={"/Search"} element={<Search data={data} />} />
           </Route>
         </Routes>
       </BrowserRouter>

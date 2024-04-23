@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React, { useState } from "react";
+import { Input } from "../styleComponents/InputComponent";
 export default function SignIn() {
   const signInFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,7 +48,8 @@ export default function SignIn() {
           </div>
           <div>
             <label htmlFor="passwordInput">Password</label>
-            <input
+            <Input
+              email_numberClick={email_numberClick}
               value={passwordInput}
               onChange={handlePassword_input}
               name="passwordInput"

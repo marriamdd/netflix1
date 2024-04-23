@@ -1,14 +1,19 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import MainPage from "../pages/MainPage";
 
 export default function Footer() {
   return (
     <FooterContainer>
       <div>
         <img src="/assets/footer/line-md_home-simple.svg" alt="home icon" />
-        <span>Home</span>
+        <Link to={"/MainPage"}>Home</Link>
       </div>
       <div>
-        <img src="/assets/footer/feather_search.svg" alt="search icon" />
+        <Link to={"/Search"}>
+          <img src="/assets/footer/feather_search.svg" alt="search icon" />
+        </Link>
+
         <span>Search</span>
       </div>
       <div>
@@ -34,6 +39,9 @@ const FooterContainer = styled.div`
   width: 100%;
   background-color: black;
   padding: 1rem;
+  a {
+    text-decoration: none;
+  }
   & > div {
     gap: 0.5rem;
     display: flex;
