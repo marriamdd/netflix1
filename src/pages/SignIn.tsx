@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React, { useState } from "react";
-import { Input } from "../styleComponents/InputComponent";
+import { Input, Label } from "../styleComponents/inputStyledComponent";
 export default function SignIn() {
   const signInFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -11,19 +11,37 @@ export default function SignIn() {
   const [emailInput, setEmailInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [email_numberClick, setEmail_numberClick] = useState(false);
+  const [passwordClick, setPasswordClick] = useState(false);
 
-  const handleInputClick = () => {
-    if (email_numberClick) {
-      setEmail_numberClick(false);
-    }
+  const handleEmailClick = () => {
     setEmail_numberClick(true);
   };
+
+  const handleEmailLeave = () => {
+    if (emailInput) {
+      setEmail_numberClick(true);
+    } else {
+      setEmail_numberClick(false);
+    }
+  };
+
+  const handlePasswordClick = () => {
+    setPasswordClick(true);
+  };
+
+  const handlePasswordLeave = () => {
+    if (passwordInput) {
+      setPasswordClick(true);
+    } else {
+      setPasswordClick(false);
+    }
+  };
+
   const handleEmail_input = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmailInput(e.target.value);
   };
   const handlePassword_input = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPasswordInput(e.target.value);
-    console.log("aaa");
   };
   return (
     <div>
@@ -31,27 +49,38 @@ export default function SignIn() {
         <SignInForm onSubmit={signInFormSubmit}>
           <h2>Sigh In</h2>
           <div>
-            <label
-              className={email_numberClick ? "active" : ""}
+            <Label
+              onMouseEnter={handleEmailClick}
+              onMouseLeave={handleEmailLeave}
+              email_numberClick={email_numberClick}
               htmlFor="emailORnumberInput"
             >
               Email or phone number
-            </label>
-            <input
+            </Label>
+            <Input
               value={emailInput}
               onChange={handleEmail_input}
-              onClick={handleInputClick}
+              onMouseEnter={handleEmailClick}
+              onMouseLeave={handleEmailLeave}
               name="emailORnumberInput"
               id="emailORnumberInput"
               type="text"
             />
           </div>
           <div>
-            <label htmlFor="passwordInput">Password</label>
+            <Label
+              onMouseEnter={handlePasswordClick}
+              onMouseLeave={handlePasswordLeave}
+              passwordClick={passwordClick}
+              htmlFor="passwordInput"
+            >
+              Password
+            </Label>
             <Input
-              email_numberClick={email_numberClick}
               value={passwordInput}
               onChange={handlePassword_input}
+              onMouseEnter={handlePasswordClick}
+              onMouseLeave={handlePasswordLeave}
               name="passwordInput"
               id="passwordInput"
               type="password"
@@ -105,7 +134,7 @@ export const SignInForm = styled.form`
   & > div {
     position: relative;
   }
-  & > div input {
+  /* & > div input {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
     width: 330px;
     height: 50px;
@@ -115,17 +144,17 @@ export const SignInForm = styled.form`
     background-color: transparent;
     border: 1px solid white;
     border-radius: 4px;
-  }
-  & > div label {
+  } */
+  /* & > div label {
     position: absolute;
     top: 1.5rem;
     left: 2.3rem;
     font-size: 1.2rem;
-  }
-  .active {
+  } */
+  /* .active {
     top: 0.3em;
     font-size: 1rem;
-  }
+  } */
   & > button {
     border-radius: 4px;
     width: 330px;

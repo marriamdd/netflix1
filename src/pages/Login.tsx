@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Input } from "../styleComponents/InputComponent";
+import { Input, Label } from "../styleComponents/inputStyledComponent";
+import { ErrorStyledComponent } from "../styleComponents/Errorstylescomponent";
 
 export default function Login() {
   const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
@@ -13,23 +14,23 @@ export default function Login() {
   const [error, setError] = useState({
     empty: "",
   });
-  const location = useLocation();
-  console.log(location);
 
   const handleInputClick = () => {
-    if (inputClick) {
-      setInputClick(false);
-    }
     setInputClick(true);
   };
-
+  const handleMouseLeave = () => {
+    if (input) {
+      setInputClick(true);
+    } else {
+      setInputClick(false);
+    }
+  };
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const inputValue = e.target.value;
     setInput(inputValue);
     setError({ empty: "" });
     if (gmailRegex.test(inputValue)) {
       setLogin(true);
-      console.log("ki");
     } else {
       setLogin(false);
     }
@@ -39,12 +40,10 @@ export default function Login() {
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
     e.preventDefault();
-    console.log("submitted");
+
     if (!login) {
       setInput("");
       setError({ empty: "Email is required." });
-
-      console.log("clear");
     } else {
       navigate("/MainPage");
     }
@@ -61,19 +60,27 @@ export default function Login() {
             membership.
           </h3>
           <form>
-            <label className="loginInputLabel" htmlFor="loginInput">
-              Email address
-            </label>
-            <Input
+            <Label
+              onMouseEnter={handleInputClick}
+              onMouseLeave={handleMouseLeave}
               inputClick={inputClick}
-              onClick={handleInputClick}
+              className="loginInputLabel"
+              htmlFor="loginInput"
+            >
+              Email address
+            </Label>
+            <Input
+              onMouseEnter={handleInputClick}
+              onMouseLeave={handleMouseLeave}
               name="loginInput"
               id="loginInput"
               value={input}
               onChange={(e) => handleInput(e)}
               type="email"
             />
-            {error.empty && <p>{error.empty}</p>}
+            {error.empty && (
+              <ErrorStyledComponent>{error.empty}</ErrorStyledComponent>
+            )}
           </form>
           <Link
             to={login ? "/MainPage" : "/"}
@@ -122,13 +129,6 @@ const LoginSection = styled.div<{ inputClick: boolean }>`
     & > form {
       margin-top: 3rem;
       position: relative;
-      & > p {
-        position: absolute;
-        font-size: 1.3rem;
-        top: 5.5rem;
-        left: 0.5rem;
-        color: red;
-      }
     }
 
     & > a {
