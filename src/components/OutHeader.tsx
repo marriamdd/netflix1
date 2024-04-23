@@ -1,9 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import MyListPage from "../pages/MyListPage";
 
-export default function Header() {
+export default function OutHeader() {
   const location = useLocation();
   const pathname = location.pathname;
   console.log(pathname);

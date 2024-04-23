@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export default function Header2() {
+export default function MainHeader() {
   return (
     <Header2Container>
       <Link to={"/MainPage"}>
@@ -13,8 +13,9 @@ export default function Header2() {
       </Link>
 
       <NavLinksContainer>
-        <Link to={"/MyList"}>My List</Link>
+        <Link to={"/TVshows"}>TV Shows</Link>
         <Link to={"/Movies"}>Movies</Link>
+        <Link to={"/MyList"}>My List</Link>
       </NavLinksContainer>
     </Header2Container>
   );

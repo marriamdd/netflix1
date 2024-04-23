@@ -13,6 +13,7 @@ html{
 }
 body{
     color: white;
+    background-color: black;
 }
 
 `;

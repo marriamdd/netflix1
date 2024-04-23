@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import Header1 from "../components/Header1";
+import OutHeader from "../components/outHeader";
 
-export default function Layout1() {
+export default function OutLayout() {
   return (
     <div>
-      <Header1 />
+      <OutHeader />
       <Outlet />
     </div>
   );

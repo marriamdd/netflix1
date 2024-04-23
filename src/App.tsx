@@ -7,17 +7,17 @@ import SignIn from "./pages/SignIn";
 import MyListPage from "./pages/MyListPage";
 import MainPage from "./pages/MainPage";
 import Movies from "./pages/Movies";
-import Layout1 from "./pages/Layout1";
-import Layout2 from "./pages/Layout2";
+import Layout1 from "./pages/OutLayout";
+import Layout2 from "./pages/MainLayout";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Movie } from "./types";
 import SingleMovie from "./pages/SingleMovie";
+import TVshows from "./pages/TVshows";
 
 function App() {
   const [data, setData] = useState<Movie[]>([]);
-  const [changeMarked, setChangeMarked] = useState<boolean>(false);
-  console.log(changeMarked);
+
   async function getData() {
     try {
       const response = await axios(`http://localhost:3000/movies`);
@@ -49,6 +49,7 @@ function App() {
               path={"/single/:title"}
               element={<SingleMovie data={data} />}
             />
+            <Route path={"/TVshows"} element={<TVshows data={data} />} />
             <Route path={"/MyList"} element={<MyListPage data={data} />} />
             <Route
               path={"/Movies"}
