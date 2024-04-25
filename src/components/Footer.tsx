@@ -30,7 +30,10 @@ export default function Footer() {
         <span>Downloads</span>
       </div>
       <div>
-        <img src="/assets/footer/Vector (1).svg" alt="" />
+        <Link to={"/More"}>
+          {" "}
+          <img src="/assets/footer/Vector (1).svg" alt="" />
+        </Link>
         <span>More</span>
       </div>
     </FooterContainer>

@@ -16,6 +16,7 @@ import SingleMovie from "./pages/SingleMovie";
 import TVshows from "./pages/TVshows";
 import Search from "./pages/Search";
 import Downloads from "./pages/Downloads";
+import More from "./pages/More";
 
 function App() {
   const [data, setData] = useState<Movie[]>([]);
@@ -59,6 +60,7 @@ function App() {
               element={<Movies data={data} setData={setData} />}
             />
             <Route path={"/Search"} element={<Search data={data} />} />
+            <Route path={"/More"} element={<More />} />
           </Route>
         </Routes>
       </BrowserRouter>
