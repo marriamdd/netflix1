@@ -1,16 +1,21 @@
 import styled from "styled-components";
 import { Movie } from "../types";
-
-export default function PopularOnNetflix({ data }: { data: Movie[] }) {
-  const filteredData = data.filter((item) => item.thumbnail?.trending);
+import Data from "../data.json";
+export default function PopularOnNetflix() {
+  const filteredData = Data.movies.filter((item) => item.isTrending);
   return (
     <PopularContainer>
       {" "}
       <span>Popular On Netflix</span>
       <PopularItems>
         {filteredData.map((item, index) => (
-          <div key={index}>
-            <img src={item.thumbnail.trending?.large} alt="" />
+          <div
+            key={index}
+            style={{
+              backgroundImage: `url(${item.thumbnail?.trending?.small})`,
+            }}
+          >
+            {/* Content */}
           </div>
         ))}
       </PopularItems>
@@ -33,13 +38,21 @@ const PopularItems = styled.div`
   gap: 0.5rem;
   overflow-x: auto;
 
-  width: 360px;
-
-  img {
+  /* width: 100%; */
+  & > div {
+    margin-top: 1.5rem;
+    min-width: 130px;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2px;
+  }
+  /* img {
     margin-top: 1.5rem;
     width: 103px;
     height: 150px;
 
     border-radius: 2px;
-  }
+  } */
 `;

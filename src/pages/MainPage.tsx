@@ -3,7 +3,7 @@ import Preview from "../components/Preview";
 import PopularOnNetflix from "../components/PopularOnNetflix";
 import { Movie } from "../types";
 import AddPlayInfoSection from "../components/AddPlayInfoSection";
-export default function MainPage({ data }: { data: Movie[] }) {
+export default function MainPage() {
   console.log("l");
   return (
     <>
@@ -11,8 +11,8 @@ export default function MainPage({ data }: { data: Movie[] }) {
         <PageIntro />
         <AddPlayInfoSection />
         <Main>
-          <Preview data={data} />
-          <PopularOnNetflix data={data} />
+          <Preview />
+          <PopularOnNetflix />
         </Main>
       </MainPageContainer>
     </>

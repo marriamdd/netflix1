@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
-
+import Data from "../data.json";
 import { Movie } from "../types";
-export default function Preview({ data }: { data: Movie[] }) {
-  const randomMovie: Movie[] = data;
+export default function Preview() {
+  // const randomMovie: Movie[] = Data;
 
   let randomIds = [];
   for (let i = 0; i <= 10; i++) {
-    let random = Math.floor(Math.random() * randomMovie.length + 1);
+    let random = Math.floor(Math.random() * Data.movies.length + 1);
     randomIds.push(random);
   }
-  const filteredData = data.filter((item: Movie) =>
+  const filteredData = Data.movies.filter((item) =>
     randomIds.includes(+item.id)
   );
 
@@ -26,7 +26,7 @@ export default function Preview({ data }: { data: Movie[] }) {
                 item.title.replace(/\s/g, "_")
               )}`}
             >
-              <img src={item.thumbnail.regular.small} alt="" />
+              <img src={item.thumbnail?.regular?.small} alt="" />
             </Link>
           </div>
         ))}

@@ -1,15 +1,14 @@
 import { Movie } from "../types";
 import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
-
-export default function MyListPage({ data }: { data: Movie[] }) {
-  console.log(data);
+import Data from "../data.json";
+export default function MyListPage() {
   return (
     <MoviesStyledContainer>
-      {data
+      {Data.movies
         .filter((item) => item.isBookmarked)
         .map((item) => (
           <div key={Math.random()}>
-            <img src={item.thumbnail.regular.small} alt="" />
+            <img src={item.thumbnail.regular?.small} alt="" />
           </div>
         ))}
     </MoviesStyledContainer>

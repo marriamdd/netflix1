@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { Movie } from "../types";
-
-export default function SingleMovie({ data }: { data: Movie[] }) {
+import Data from "../data.json";
+export default function SingleMovie() {
   const { title } = useParams();
 
-  const currentMovie = data.find(
+  const currentMovie = Data.movies.find(
     (item) => item.title.replaceAll(" ", "_") === title
   );
 
@@ -13,7 +13,7 @@ export default function SingleMovie({ data }: { data: Movie[] }) {
 
   return (
     <CurrentMovieContainer>
-      <img src={currentMovie?.thumbnail.regular.large} alt="" />
+      <img src={currentMovie?.thumbnail?.regular?.large} alt="" />
       <div className="vectorContainer">
         <img src="/assets/design/Vector (3).svg" alt="vector" />
         <div className="line"></div>

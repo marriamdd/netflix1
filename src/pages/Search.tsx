@@ -1,9 +1,11 @@
 import styled from "styled-components";
 import { Movie } from "../types";
 import React, { useState } from "react";
-export default function Search({ data }: { data: Movie[] }) {
+import Data from "../data.json";
+export default function Search() {
   const [inputValue, setInputValue] = useState("");
   const [searched, setSearched] = useState<Movie[]>([]);
+
   console.log(searched);
   console.log(inputValue);
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -32,7 +34,7 @@ export default function Search({ data }: { data: Movie[] }) {
         <img src="/assets/design/ic_baseline-mic.svg" alt="microphone" />
       </SearchInputContainer>
       <h1>Top Searches</h1>
-      {data
+      {Data.movies
         .filter((item) =>
           inputValue
             ? item.title.toLowerCase().includes(inputValue.toLocaleLowerCase())
