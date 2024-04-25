@@ -10,7 +10,7 @@ export default function PopularOnNetflix({ data }: { data: Movie[] }) {
       <PopularItems>
         {filteredData.map((item, index) => (
           <div key={index}>
-            <img src={item.thumbnail.trending?.small} alt="" />
+            <img src={item.thumbnail.trending?.large} alt="" />
           </div>
         ))}
       </PopularItems>
@@ -38,8 +38,8 @@ const PopularItems = styled.div`
   img {
     margin-top: 1.5rem;
     width: 103px;
-    height: 161px;
-    flex-shrink: 0;
+    height: 150px;
+
     border-radius: 2px;
   }
 `;

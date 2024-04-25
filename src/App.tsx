@@ -15,6 +15,7 @@ import { Movie } from "./types";
 import SingleMovie from "./pages/SingleMovie";
 import TVshows from "./pages/TVshows";
 import Search from "./pages/Search";
+import Downloads from "./pages/Downloads";
 
 function App() {
   const [data, setData] = useState<Movie[]>([]);
@@ -50,6 +51,7 @@ function App() {
               path={"/single/:title"}
               element={<SingleMovie data={data} />}
             />
+            <Route path={"/Downloads"} element={<Downloads />} />
             <Route path={"/TVshows"} element={<TVshows data={data} />} />
             <Route path={"/MyList"} element={<MyListPage data={data} />} />
             <Route

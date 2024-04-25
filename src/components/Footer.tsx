@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import MainPage from "../pages/MainPage";
 
 export default function Footer() {
   return (
     <FooterContainer>
       <div>
-        <img src="/assets/footer/line-md_home-simple.svg" alt="home icon" />
-        <Link to={"/MainPage"}>Home</Link>
+        <Link to={"/MainPage"}>
+          <img src="/assets/footer/line-md_home-simple.svg" alt="home icon" />
+        </Link>
+        <span>Home</span>
       </div>
       <div>
         <Link to={"/Search"}>
@@ -21,7 +22,11 @@ export default function Footer() {
         <span>Coming Soon</span>
       </div>
       <div>
-        <img src="/assets/footer/fe_download.svg" alt="downloads icon" />
+        <Link to={"/Downloads"}>
+          {" "}
+          <img src="/assets/footer/fe_download.svg" alt="downloads icon" />
+        </Link>
+
         <span>Downloads</span>
       </div>
       <div>
