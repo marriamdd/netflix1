@@ -1,7 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import styled from "styled-components";
-
+import Category from "../pages/Category";
+import { useContext } from "react";
+import { CategoryContext } from "../App";
 export default function MainHeader() {
+  const options = ["TV Series", "Movies", "My List"];
+  const { setCategory } = useContext(CategoryContext);
+  const categoryClick = (item: string) => {
+    console.log(item);
+    setCategory(item);
+  };
   return (
     <Header2Container>
       <Link to={"/MainPage"}>
@@ -9,9 +17,15 @@ export default function MainHeader() {
       </Link>
 
       <NavLinksContainer>
-        <Link to={"/TVshows"}>TV Shows</Link>
-        <Link to={"/Movies"}>Movies</Link>
-        <Link to={"/MyList"}>My List</Link>
+        {options.map((item) => (
+          <Link
+            to={"/Category"}
+            onClick={() => categoryClick(item)}
+            key={Math.random()}
+          >
+            {item}
+          </Link>
+        ))}
       </NavLinksContainer>
     </Header2Container>
   );

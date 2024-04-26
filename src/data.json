@@ -5,7 +5,7 @@
       "title": "Beyond Earth",
       "thumbnail": {
         "regular": {
-          "small": "public/assets/moviesIMGbase/meore.jpeg"
+          "small": "/assets/moviesIMGbase/meore.jpeg"
         }
       },
       "year": 2019,
@@ -19,7 +19,7 @@
       "title": "Bottom Gear",
       "thumbnail": {
         "regular": {
-          "small": "/assets/moviesIMGbase/Ellipse 3.svg"
+          "small": "/assets/moviesIMGbase/14.png"
         }
       },
       "year": 2021,
@@ -33,9 +33,7 @@
       "title": "Undiscovered Cities",
       "thumbnail": {
         "regular": {
-          "small": "/assets/moviesIMGbase/Ellipse 4 (1).svg",
-          "medium": "/assets/thumbnails/undiscovered-cities/regular/medium.jpg",
-          "large": "/assets/thumbnails/undiscovered-cities/regular/large.jpg"
+          "small": "/assets/moviesIMGbase/18.png"
         }
       },
       "year": 2019,
@@ -49,9 +47,7 @@
       "title": "1998",
       "thumbnail": {
         "regular": {
-          "small": "public/assets/moviesIMGbase/Ellipse 4.svg",
-          "medium": "/assets/thumbnails/1998/regular/medium.jpg",
-          "large": "/assets/thumbnails/1998/regular/large.jpg"
+          "small": "/assets/moviesIMGbase/19.jpeg"
         }
       },
       "year": 2021,
@@ -65,10 +61,10 @@
       "title": "Dark Side of the Moon",
       "thumbnail": {
         "trending": {
-          "small": "public/assets/moviesIMGbase/Rectangle 14.jpeg"
+          "small": "/assets/moviesIMGbase/12.jpeg"
         },
         "regular": {
-          "small": "public/assets/moviesIMGbase/Rectangle 14.png"
+          "small": "/assets/moviesIMGbase/12.jpeg"
         }
       },
       "year": 2018,
@@ -82,7 +78,7 @@
       "title": "The Great Lands",
       "thumbnail": {
         "regular": {
-          "small": "/assets/moviesIMGbase/Rectangle 15.png"
+          "small": "/assets/moviesIMGbase/8.jpeg"
         }
       },
       "year": 2019,
@@ -293,20 +289,6 @@
           "small": "/assets/moviesIMGbase/11.png"
         }
       },
-      "year": 2017,
-      "category": "Movie",
-      "rating": "E",
-      "isBookmarked": false,
-      "isTrending": false
-    },
-    {
-      "id": "20",
-      "title": "112",
-      "thumbnail": {
-        "regular": {
-          "small": "/assets/moviesIMGbase/12.jpeg"
-        }
-      },
       "year": 2013,
       "category": "TV Series",
       "rating": "PG",
@@ -318,7 +300,7 @@
       "title": "Lone Heart",
       "thumbnail": {
         "regular": {
-          "small": "public/assets/moviesIMGbase/13.jpeg"
+          "small": "/assets/moviesIMGbase/13.jpeg"
         }
       },
       "year": 2017,

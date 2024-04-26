@@ -26,7 +26,11 @@ export default function Preview() {
                 item.title.replace(/\s/g, "_")
               )}`}
             >
-              <img src={item.thumbnail?.regular?.small} alt="" />
+              <div
+                style={{
+                  backgroundImage: `url(${item.thumbnail?.regular?.small})`,
+                }}
+              ></div>
             </Link>
           </div>
         ))}
@@ -38,6 +42,9 @@ export default function Preview() {
 const PreviewContainer = styled.div`
   background-color: black;
   margin: 2rem;
+  width: 95%;
+  height: 160px;
+  overflow-x: auto;
   span {
     font-size: 26.748px;
 
@@ -45,11 +52,21 @@ const PreviewContainer = styled.div`
     line-height: 20px;
     letter-spacing: -0.073px;
   }
+  div {
+    width: 100%;
+    margin-top: 0.5rem;
+    width: 102px;
+    height: 100px;
+
+    border-radius: 102px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 `;
 const PreviewItems = styled.div`
   display: flex;
   gap: 0.5rem;
-  overflow-x: auto;
 
   width: 360px;
 
