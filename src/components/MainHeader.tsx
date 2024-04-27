@@ -1,19 +1,32 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import { useContext } from "react";
 import { CategoryContext } from "../App";
-import Category from "../pages/Category";
+
 export default function MainHeader() {
   const options = ["TV Series", "Movies", "My List"];
+  const insideOptions = ["All", "TV Series", "Movies", "My List"];
   const { setCategory, category } = useContext(CategoryContext);
   const categoryClick = (item: string) => {
-    console.log(category);
-    setCategory(item);
+    switch (item) {
+      case "Movies":
+        setCategory("Movie");
+        break;
+      case "TV Series":
+        setCategory("TV Series");
+        break;
+      case "My List":
+        setCategory("isBookmarked");
+        break;
+      default:
+        setCategory("All");
+    }
   };
   const handleHomeClick = () => {
     setCategory("");
   };
+
   return (
     <Header2Container category={category}>
       <Link to={"/MainPage"} onClick={handleHomeClick}>
@@ -25,13 +38,19 @@ export default function MainHeader() {
           <div className="dropdown">
             {" "}
             <h2 className="current">
-              {category}{" "}
+              {category === "Movie"
+                ? "Movies"
+                : category === "TV Series"
+                ? "TV Series"
+                : category === "isBookmarked"
+                ? "MY List"
+                : "All"}{" "}
               <span>
                 <img src="/assets/moviesIMGbase/Polygon 1.svg" alt="" />
               </span>
             </h2>
             <div className="dropdown-content">
-              {options.map((item) => (
+              {insideOptions.map((item) => (
                 <Link
                   to={"/Category"}
                   onClick={() => categoryClick(item)}
