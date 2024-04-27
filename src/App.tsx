@@ -27,7 +27,7 @@ export const CategoryContext = createContext<{
 });
 
 function App() {
-  const [category, setCategory] = useState("Movies");
+  const [category, setCategory] = useState("");
   return (
     <>
       {" "}

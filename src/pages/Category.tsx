@@ -1,6 +1,6 @@
 import { CategoryContext } from "../App";
 import Data from "../data.json";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
 
 export default function Category() {

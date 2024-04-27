@@ -2,10 +2,8 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 import Data from "../data.json";
-import { Movie } from "../types";
-export default function Preview() {
-  // const randomMovie: Movie[] = Data;
 
+export default function Preview() {
   let randomIds = [];
   for (let i = 0; i <= 10; i++) {
     let random = Math.floor(Math.random() * Data.movies.length + 1);

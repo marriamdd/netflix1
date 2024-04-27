@@ -13,7 +13,7 @@ export default function SingleMovie() {
 
   return (
     <CurrentMovieContainer>
-      <img src={currentMovie?.thumbnail?.regular?.large} alt="" />
+      <img src={currentMovie?.thumbnail?.regular?.small} alt="" />
       <div className="vectorContainer">
         <img src="/assets/design/Vector (3).svg" alt="vector" />
         <div className="line"></div>
@@ -38,8 +38,8 @@ const CurrentMovieContainer = styled.div`
   flex-direction: column;
   height: 100vh;
   img {
-    width: 80%;
-    height: 30vh;
+    /* width: 85%;
+    height: 50vh; */
   }
   h1 {
     align-self: flex-start;
@@ -52,7 +52,7 @@ const CurrentMovieContainer = styled.div`
       width: 37px;
       height: 44.4px;
       position: absolute;
-      top: -13rem;
+      top: -15rem;
       left: 18rem;
     }
     .line {

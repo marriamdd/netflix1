@@ -14,7 +14,7 @@ export const MoviesStyledContainer = styled.div`
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: red;
+    background-color: black;
   }
 
   & > div img {
