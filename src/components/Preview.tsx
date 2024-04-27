@@ -5,7 +5,7 @@ import Data from "../data.json";
 
 export default function Preview() {
   let randomIds = [];
-  for (let i = 0; i <= 10; i++) {
+  for (let i = 0; i <= 6; i++) {
     let random = Math.floor(Math.random() * Data.movies.length + 1);
     randomIds.push(random);
   }

@@ -155,8 +155,6 @@ const NavLinksContainer = styled.div<{ categoryChange: boolean }>`
       justify-content:center;
       min-width: 340px;
       height: 100vh;
-
-   
       top: 0rem;
       left: 0;
       right: 0;

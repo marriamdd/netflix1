@@ -33,6 +33,7 @@ export const CategoryContext = createContext<{
 function App() {
   const [category, setCategory] = useState("");
   const [categoryChange, setCategoryChange] = useState(false);
+  console.log(category);
   return (
     <>
       {" "}

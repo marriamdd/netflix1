@@ -11,15 +11,6 @@ export default function Search() {
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     let input = e.target.value;
     setInputValue(input);
-    // if (input.length >= 3) {
-    //   let filtered = data.filter((item) =>
-    //     item.title.toLowerCase().includes(input)
-    //   );
-    //   setSearched(filtered);
-    //   if (!input) {
-    //     setSearched([]);
-    //   }
-    // }
   };
   return (
     <SearchContainer>
@@ -33,39 +24,63 @@ export default function Search() {
         />
         <img src="/assets/design/ic_baseline-mic.svg" alt="microphone" />
       </SearchInputContainer>
-      <h1>Top Searches</h1>
-      {Data.movies
-        .filter((item) =>
-          inputValue
-            ? item.title.toLowerCase().includes(inputValue.toLocaleLowerCase())
-            : false
-        )
-        ?.map((item) => (
-          <div className="foundMovie" key={Math.random()}>
-            <img
-              className="foundImg"
-              src={item.thumbnail.regular?.small}
-              alt=""
-            />
-            <span>{item.title}</span>{" "}
-          </div>
-        ))}
+
+      <div className="foundedContainer">
+        {Data.movies
+          .filter((item) =>
+            inputValue
+              ? item.title
+                  .toLowerCase()
+                  .includes(inputValue.toLocaleLowerCase())
+              : false
+          )
+          ?.map((item) => (
+            <div className="foundMovie" key={Math.random()}>
+              <img
+                className="foundImg"
+                src={item.thumbnail.regular?.small}
+                alt=""
+              />
+              <div className="nameIconDiv">
+                <span>{item.title}</span>{" "}
+                <img src="/assets/moviesIMGbase/bx_bx-play-circle.svg" alt="" />
+              </div>
+            </div>
+          ))}
+      </div>
     </SearchContainer>
   );
 }
 const SearchContainer = styled.div`
   padding-block: 9rem 3rem;
+
+  .foundedContainer {
+    height: 370px;
+    overflow-y: auto;
+  }
   h1 {
     padding: 2rem;
   }
   .foundMovie {
     width: 100%;
+    background: #424242;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+
+    border-bottom: 2px solid black;
+
+    .nameIconDiv {
+      padding-inline: 1rem;
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
   .foundImg {
-    width: 200px;
-    height: 200px;
+    border-radius: 3px;
+    width: 146px;
+    height: 76px;
   }
 `;
 const SearchInputContainer = styled.div`

@@ -20,13 +20,17 @@
       "thumbnail": {
         "regular": {
           "small": "/assets/moviesIMGbase/14.png"
+        },
+        "trending": {
+          "small": "/assets/moviesIMGbase/14.png"
         }
       },
       "year": 2021,
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "genre": "triller&Mysteries"
     },
     {
       "id": "3",
@@ -56,37 +60,7 @@
       "isBookmarked": false,
       "isTrending": false
     },
-    {
-      "id": "5",
-      "title": "Dark Side of the Moon",
-      "thumbnail": {
-        "trending": {
-          "small": "/assets/moviesIMGbase/12.jpeg"
-        },
-        "regular": {
-          "small": "/assets/moviesIMGbase/12.jpeg"
-        }
-      },
-      "year": 2018,
-      "category": "TV Series",
-      "rating": "PG",
-      "isBookmarked": true,
-      "isTrending": false
-    },
-    {
-      "id": "6",
-      "title": "The Great Lands",
-      "thumbnail": {
-        "regular": {
-          "small": "/assets/moviesIMGbase/8.jpeg"
-        }
-      },
-      "year": 2019,
-      "category": "Movie",
-      "rating": "E",
-      "isBookmarked": false,
-      "isTrending": false
-    },
+
     {
       "id": "7",
       "title": "The Diary",
@@ -102,22 +76,10 @@
       "category": "TV Series",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": true
+      "isTrending": true,
+      "genre": "triller&Mysteries"
     },
-    {
-      "id": "8",
-      "title": "Earth’s Untouched",
-      "thumbnail": {
-        "regular": {
-          "small": "/assets/moviesIMGbase/f76f0a23dfa75d67f50b7af74d9d2bb5.png"
-        }
-      },
-      "year": 2017,
-      "category": "Movie",
-      "rating": "18+",
-      "isBookmarked": true,
-      "isTrending": false
-    },
+
     {
       "id": "9",
       "title": "No Land Beyond",
@@ -135,25 +97,15 @@
       "isBookmarked": false,
       "isTrending": true
     },
-    {
-      "id": "10",
-      "title": "During the Hunt",
-      "thumbnail": {
-        "regular": {
-          "small": "/assets/moviesIMGbase/1.jpeg"
-        }
-      },
-      "year": 2016,
-      "category": "TV Series",
-      "rating": "PG",
-      "isBookmarked": false,
-      "isTrending": false
-    },
+
     {
       "id": "11",
       "title": "Autosport the Series",
       "thumbnail": {
         "regular": {
+          "small": "/assets/moviesIMGbase/2.png"
+        },
+        "trending": {
           "small": "/assets/moviesIMGbase/2.png"
         }
       },
@@ -161,7 +113,8 @@
       "category": "TV Series",
       "rating": "18+",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "genre": "triller&Mysteries"
     },
     {
       "id": "11",
@@ -178,7 +131,8 @@
       "category": "Movie",
       "rating": "E",
       "isBookmarked": false,
-      "isTrending": true
+      "isTrending": true,
+      "genre": "triller&Mysteries"
     },
     {
       "id": "12",
@@ -194,23 +148,7 @@
       "isBookmarked": false,
       "isTrending": false
     },
-    {
-      "id": "13",
-      "title": "The Rockies",
-      "thumbnail": {
-        "trending": {
-          "small": "/assets/moviesIMGbase/5.png"
-        },
-        "regular": {
-          "small": "/assets/moviesIMGbase/5.png"
-        }
-      },
-      "year": 2015,
-      "category": "TV Series",
-      "rating": "E",
-      "isBookmarked": true,
-      "isTrending": true
-    },
+
     {
       "id": "14",
       "title": "Relentless",
@@ -309,25 +247,15 @@
       "isBookmarked": false,
       "isTrending": false
     },
-    {
-      "id": "22",
-      "title": "Production Line",
-      "thumbnail": {
-        "regular": {
-          "small": "/assets/moviesIMGbase/14.png"
-        }
-      },
-      "year": 2018,
-      "category": "TV Series",
-      "rating": "PG",
-      "isBookmarked": false,
-      "isTrending": false
-    },
+
     {
       "id": "23",
       "title": "Dogs",
       "thumbnail": {
         "regular": {
+          "small": "/assets/moviesIMGbase/15.jpeg"
+        },
+        "trending": {
           "small": "/assets/moviesIMGbase/15.jpeg"
         }
       },
@@ -335,7 +263,8 @@
       "category": "TV Series",
       "rating": "E",
       "isBookmarked": true,
-      "isTrending": false
+      "isTrending": false,
+      "netflixOrigin": true
     },
     {
       "id": "24",
@@ -385,13 +314,17 @@
       "thumbnail": {
         "regular": {
           "small": "/assets/moviesIMGbase/19.jpeg"
+        },
+        "trending": {
+          "small": "/assets/moviesIMGbase/19.jpeg"
         }
       },
       "year": 2018,
       "category": "TV Series",
       "rating": "18+",
       "isBookmarked": false,
-      "isTrending": false
+      "isTrending": false,
+      "netflixOrigin": true
     },
     {
       "id": "28",
@@ -409,7 +342,7 @@
     },
     {
       "id": "29",
-      "title": "Citation",
+      "title": "Fresh Prince",
       "thumbnail": {
         "regular": {
           "small": "/assets/moviesIMGbase/21.png"
@@ -422,11 +355,12 @@
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": true
+      "isTrending": true,
+      "netflixOrigin": true
     },
     {
       "id": "30",
-      "title": "Oloture",
+      "title": "Extraction",
       "thumbnail": {
         "regular": {
           "small": "/assets/moviesIMGbase/22.jpeg"
@@ -439,7 +373,8 @@
       "category": "Movie",
       "rating": "PG",
       "isBookmarked": false,
-      "isTrending": true
+      "isTrending": true,
+      "netflixOrigin": true
     },
     {
       "id": "31",
@@ -460,7 +395,7 @@
     },
 
     {
-      "id": "33",
+      "id": "32",
       "title": "Ozark",
       "thumbnail": {
         "regular": {
@@ -476,23 +411,98 @@
       "isBookmarked": false,
       "isTrending": false
     },
-
     {
       "id": "35",
-      "title": "Your Excellency",
+      "title": "A Fall From Grace",
       "thumbnail": {
         "regular": {
-          "small": "/assets/moviesIMGbase/Your Excellency.png"
+          "small": "/assets/moviesIMGbase/africanMovies/3.jpeg"
         },
         "trending": {
-          "small": "/assets/moviesIMGbase/Your Excellency.png"
+          "small": "/assets/moviesIMGbase/africanMovies/3.jpeg"
         }
       },
       "year": 2017,
       "category": "Movie",
       "rating": "PG",
+      "country": "african",
       "isBookmarked": false,
       "isTrending": false
+    },
+    {
+      "id": "33",
+      "title": "Black List",
+      "thumbnail": {
+        "regular": {
+          "small": "/assets/moviesIMGbase/africanMovies/1.png"
+        },
+        "trending": {
+          "small": "/assets/moviesIMGbase/africanMovies/1.png"
+        }
+      },
+      "year": 2017,
+      "category": "Movie",
+      "rating": "PG",
+      "country": "african",
+      "isBookmarked": false,
+      "isTrending": false
+    },
+
+    {
+      "id": "34",
+      "title": "Losers",
+      "thumbnail": {
+        "regular": {
+          "small": "/assets/moviesIMGbase/africanMovies/2.png"
+        },
+        "trending": {
+          "small": "/assets/moviesIMGbase/africanMovies/2.png"
+        }
+      },
+      "year": 2017,
+      "category": "Movie",
+      "rating": "PG",
+      "country": "african",
+      "isBookmarked": false,
+      "isTrending": true
+    },
+
+    {
+      "id": "36",
+      "title": "Riding with Sugar",
+      "thumbnail": {
+        "regular": {
+          "small": "/assets/moviesIMGbase/africanMovies/4.jpeg"
+        },
+        "trending": {
+          "small": "/assets/moviesIMGbase/africanMovies/4.jpeg"
+        }
+      },
+      "year": 2017,
+      "category": "Movie",
+      "rating": "PG",
+      "country": "african",
+      "isBookmarked": false,
+      "isTrending": false
+    },
+    {
+      "id": "36",
+      "title": "Kasanova",
+      "thumbnail": {
+        "regular": {
+          "small": "/assets/moviesIMGbase/netxlifOrigin1.png"
+        },
+        "trending": {
+          "small": "/assets/moviesIMGbase/netxlifOrigin1.png"
+        }
+      },
+      "year": 2017,
+      "category": "Movie",
+      "rating": "PG",
+      "country": "african",
+      "isBookmarked": false,
+      "isTrending": false,
+      "netflixOrigin": true
     }
   ]
 }

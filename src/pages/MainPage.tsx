@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import Preview from "../components/Preview";
 import PopularOnNetflix from "../components/PopularOnNetflix";
-import { Movie } from "../types";
+
 import AddPlayInfoSection from "../components/AddPlayInfoSection";
+import AfricanMovies from "../components/AfricanMovies";
+import NetflixOrigins from "../components/NetflicOrigins";
+import TvTrillers from "../components/TvTrillers&Mysteries";
 export default function MainPage() {
-  console.log("l");
   return (
     <>
       <MainPageContainer>
@@ -13,6 +15,9 @@ export default function MainPage() {
         <Main>
           <Preview />
           <PopularOnNetflix />
+          <AfricanMovies />
+          <NetflixOrigins />
+          <TvTrillers />
         </Main>
       </MainPageContainer>
     </>

@@ -4,12 +4,14 @@ import {
   PopularContainer,
   PopularItems,
 } from "../styleComponents/MainPagePopularsContainer";
-export default function PopularOnNetflix() {
-  const filteredData = Data.movies.filter((item) => item.isTrending);
+export default function TvTrillers() {
+  const filteredData = Data.movies.filter(
+    (item) => item.genre === "triller&Mysteries"
+  );
   return (
     <PopularContainer>
       {" "}
-      <span>Popular On Netflix</span>
+      <span>TV Thrillers & Mysteries</span>
       <PopularItems>
         {filteredData.map((item, index) => (
           <Link

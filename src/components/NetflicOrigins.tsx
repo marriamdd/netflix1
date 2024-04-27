@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
-import Data from "../data.json";
 import {
   PopularContainer,
   PopularItems,
 } from "../styleComponents/MainPagePopularsContainer";
-export default function PopularOnNetflix() {
-  const filteredData = Data.movies.filter((item) => item.isTrending);
+import Data from "../data.json";
+
+export default function NetflixOrigins() {
+  const filteredData = Data.movies.filter((item) => item.netflixOrigin);
   return (
     <PopularContainer>
       {" "}
