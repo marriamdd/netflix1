@@ -4,9 +4,9 @@ import { useContext } from "react";
 import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
 
 export default function Category() {
-  const { category } = useContext(CategoryContext);
+  const { category, categoryChange, setCategoryChange } =
+    useContext(CategoryContext);
 
-  console.log(category);
   return (
     <MoviesStyledContainer>
       {category === "Movie" || category === "TV Series"

@@ -21,18 +21,25 @@ import Category from "./pages/Category";
 export const CategoryContext = createContext<{
   category: string;
   setCategory: React.Dispatch<React.SetStateAction<string>>;
+  setCategoryChange: React.Dispatch<React.SetStateAction<boolean>>;
+  categoryChange: boolean;
 }>({
   category: "",
   setCategory: () => {},
+  categoryChange: false,
+  setCategoryChange: () => {},
 });
 
 function App() {
   const [category, setCategory] = useState("");
+  const [categoryChange, setCategoryChange] = useState(false);
   return (
     <>
       {" "}
       <GlobalStyles />
-      <CategoryContext.Provider value={{ category, setCategory }}>
+      <CategoryContext.Provider
+        value={{ category, setCategory, categoryChange, setCategoryChange }}
+      >
         <BrowserRouter>
           <Routes>
             <Route element={<Layout1 />}>
