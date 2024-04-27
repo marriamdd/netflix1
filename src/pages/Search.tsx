@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Data from "../data.json";
 export default function Search() {
   const [inputValue, setInputValue] = useState("");
-  const [searched, setSearched] = useState<Movie[]>([]);
+  const [searched] = useState<Movie[]>([]);
 
   console.log(searched);
   console.log(inputValue);

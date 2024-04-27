@@ -1,9 +1,22 @@
 import styled from "styled-components";
-
+import Data from "../data.json";
+import { useParams } from "react-router-dom";
 export default function () {
+  const { title } = useParams();
+  console.log(title);
+  const handleAddToListClick = () => {
+    const current = Data.movies.find(
+      (item) => item.title.replaceAll("_", " ") === title?.replaceAll("_", " ")
+    );
+    if (current?.isBookmarked === true) {
+      current.isBookmarked = !current?.isBookmarked;
+    } else if (current?.isBookmarked === false) {
+      current.isBookmarked = !current?.isBookmarked;
+    }
+  };
   return (
     <Container>
-      <div>
+      <div onClick={handleAddToListClick}>
         <img
           src="/assets/design/ant-design_plus-outlined.svg"
           alt="plus-outlined"

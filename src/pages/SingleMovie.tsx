@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { Movie } from "../types";
 import Data from "../data.json";
+import AddPlayInfoSection from "../components/AddPlayInfoSection";
 export default function SingleMovie() {
   const { title } = useParams();
 
@@ -12,23 +13,30 @@ export default function SingleMovie() {
   const formattedTitle = currentMovie?.title.replaceAll("_", " ");
 
   return (
-    <CurrentMovieContainer>
-      <img src={currentMovie?.thumbnail?.regular?.small} alt="" />
-      <div className="vectorContainer">
-        <img src="/assets/design/Vector (3).svg" alt="vector" />
-        <div className="line"></div>
-        <span>92.44</span>
-        <img
-          className="ellipse"
-          src="/assets/design/Ellipse 10.svg"
-          alt="red Ellipse"
-        />
-      </div>
+    <CurrentMovieDiv>
+      <CurrentMovieContainer>
+        <img src={currentMovie?.thumbnail?.regular?.small} alt="" />
+        <div className="vectorContainer">
+          <div className="line"></div>
+          <span>92.44</span>
+          <img
+            className="ellipse"
+            src="/assets/design/Ellipse 10.svg"
+            alt="red Ellipse"
+          />
+        </div>
+      </CurrentMovieContainer>
 
+      <AddPlayInfoSection />
       <h1>{formattedTitle}</h1>
-    </CurrentMovieContainer>
+    </CurrentMovieDiv>
   );
 }
+const CurrentMovieDiv = styled.div`
+  h1 {
+    padding: 1rem 0rem 2rem 2rem;
+  }
+`;
 const CurrentMovieContainer = styled.div`
   padding-top: 9rem;
   background-color: black;
@@ -36,15 +44,8 @@ const CurrentMovieContainer = styled.div`
   gap: 2rem;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
-  img {
-    /* width: 85%;
-    height: 50vh; */
-  }
-  h1 {
-    align-self: flex-start;
-    padding-left: 2rem;
-  }
+  /* height: 100vh; */
+
   .vectorContainer {
     position: relative;
     width: 100%;
