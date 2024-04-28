@@ -1,13 +1,10 @@
 import styled from "styled-components";
-import { Movie } from "../types";
+
 import React, { useState } from "react";
 import Data from "../data.json";
 export default function Search() {
   const [inputValue, setInputValue] = useState("");
-  const [searched] = useState<Movie[]>([]);
 
-  console.log(searched);
-  console.log(inputValue);
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     let input = e.target.value;
     setInputValue(input);
@@ -26,6 +23,7 @@ export default function Search() {
       </SearchInputContainer>
 
       <div className="foundedContainer">
+        {inputValue && <h1>Top Searches</h1>}
         {Data.movies
           .filter((item) =>
             inputValue
