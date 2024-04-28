@@ -18,7 +18,8 @@ export default function Footer() {
         <span>Search</span>
       </div>
       <div>
-        <Link to={"/ComingSoon"}>
+        <Link className="comingSoonDiv" to={"/ComingSoon"}>
+          <div>4</div>
           <img src="/assets/footer/Vector.svg" alt="coming soon" />
         </Link>
         <span>Coming Soon</span>
@@ -60,6 +61,20 @@ const FooterContainer = styled.div`
     img {
       width: 2.4rem;
       height: 2.4rem;
+    }
+  }
+  .comingSoonDiv {
+    position: relative;
+    div {
+      width: 14px;
+      height: 13px;
+      background-color: red;
+      text-align: center;
+      border-radius: 50%;
+      color: white;
+      position: absolute;
+      left: 1.4rem;
+      top: -0.6rem;
     }
   }
 `;
