@@ -17,6 +17,7 @@ import Search from "./pages/Search";
 import Downloads from "./pages/Downloads";
 import More from "./pages/More";
 import Category from "./pages/Category";
+import ComingSoonPage from "./pages/ComingSoonPage";
 
 export const CategoryContext = createContext<{
   category: string;
@@ -55,7 +56,7 @@ function App() {
 
               <Route path={"/Search"} element={<Search />} />
               <Route path={"/More"} element={<More />} />
-
+              <Route path={"/ComingSoon"} element={<ComingSoonPage />} />
               <Route path={"/Category"} element={<Category />} />
             </Route>
           </Routes>

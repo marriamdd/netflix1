@@ -486,7 +486,7 @@
       "isTrending": false
     },
     {
-      "id": "36",
+      "id": "37",
       "title": "Kasanova",
       "thumbnail": {
         "regular": {
@@ -503,6 +503,61 @@
       "isBookmarked": false,
       "isTrending": false,
       "netflixOrigin": true
+    },
+    {
+      "id": "38",
+      "title": "Castle & Castle",
+      "thumbnail": {
+        "regular": {
+          "small": "/assets/moviesIMGbase/comingsoon3.png"
+        },
+        "trending": {
+          "small": "/assets/moviesIMGbase/comingsoon3.png"
+        }
+      },
+      "year": 2017,
+      "category": "Coming Soon",
+      "rating": "PG",
+
+      "isBookmarked": true,
+      "isTrending": false,
+      "netflixOrigin": false
+    },
+    {
+      "id": "39",
+      "title": "Tiny Pretty Things",
+      "thumbnail": {
+        "regular": {
+          "small": "/assets/moviesIMGbase/soon4.png"
+        },
+        "trending": {
+          "small": "/assets/moviesIMGbase/soon4.png"
+        }
+      },
+      "year": 2017,
+      "category": "Coming Soon",
+      "rating": "PG",
+
+      "isBookmarked": false,
+      "isTrending": false
+    },
+    {
+      "id": "40",
+      "title": "Tiny Pretty Things",
+      "thumbnail": {
+        "regular": {
+          "small": "/assets/moviesIMGbase/soon5.png"
+        },
+        "trending": {
+          "small": "/assets/moviesIMGbase/soon5.png"
+        }
+      },
+      "year": 2024,
+      "category": "Coming Soon",
+      "rating": "PG",
+
+      "isBookmarked": false,
+      "isTrending": false
     }
   ]
 }

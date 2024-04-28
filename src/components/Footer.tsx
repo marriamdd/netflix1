@@ -18,7 +18,9 @@ export default function Footer() {
         <span>Search</span>
       </div>
       <div>
-        <img src="/assets/footer/Vector.svg" alt="coming soon" />
+        <Link to={"/ComingSoon"}>
+          <img src="/assets/footer/Vector.svg" alt="coming soon" />
+        </Link>
         <span>Coming Soon</span>
       </div>
       <div>
