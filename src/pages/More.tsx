@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export default function More() {
@@ -14,7 +15,7 @@ export default function More() {
         </div>
         <div>
           <img src="/assets/design/Rectangle 4.png" alt="" />
-          <span>kl</span>
+          <span>Aunt</span>
         </div>
         <div>
           <img src="/assets/design/Rectangle 5.png" alt="" />
@@ -70,7 +71,7 @@ export default function More() {
           <span>App Settings</span>
           <span>Account</span>
           <span>Help</span>
-          <span>Sign Out</span>
+          <Link to={"/"}>Sign Out</Link>
         </div>
       </div>
     </MoreContainer>
@@ -87,6 +88,11 @@ const MoreContainer = styled.div`
     padding-top: 2rem;
     & > span {
       font-size: 12px;
+    }
+    a {
+      padding-left: 1rem;
+      font-size: 12px;
+      text-decoration: none;
     }
   }
   p {
