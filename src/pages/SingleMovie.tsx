@@ -29,6 +29,19 @@ export default function SingleMovie() {
 
       <AddPlayInfoSection />
       <h1>{formattedTitle}</h1>
+      <div className="movieInfo">
+        <img src={currentMovie?.thumbnail?.regular?.small} alt="" />
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis in
+          dolor ullam ipsa nobis, autem architecto modi atque temporibus quasi
+          voluptatem eos dolorum nihil pariatur obcaecati sapiente eum quidem
+          iusto.
+        </p>
+      </div>
+      <div className="ratingDiv">
+        <span>{currentMovie?.rating}</span>
+        <span className="year">{currentMovie?.year}</span>
+      </div>
     </CurrentMovieDiv>
   );
 }
@@ -36,15 +49,49 @@ const CurrentMovieDiv = styled.div`
   h1 {
     padding: 1rem 0rem 2rem 2rem;
   }
+  .ratingDiv {
+    width: 100%;
+    height: 20px;
+
+    display: flex;
+    padding-right: 2rem;
+    position: relative;
+    justify-content: flex-end;
+    span {
+      position: absolute;
+      top: -3rem;
+      background-color: gray;
+      padding: 0.8rem;
+      border-radius: 50%;
+    }
+    .year {
+      left: 20rem;
+      border-radius: 25%;
+    }
+  }
+  .movieInfo {
+    display: flex;
+    gap: 3rem;
+    padding-left: 2rem;
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 3px;
+    }
+    p {
+      width: 300px;
+      padding-top: 2rem;
+    }
+  }
 `;
 const CurrentMovieContainer = styled.div`
   padding-top: 9rem;
   background-color: black;
   display: flex;
   gap: 2rem;
-  align-items: center;
+
   flex-direction: column;
-  /* height: 100vh; */
 
   .vectorContainer {
     position: relative;
@@ -59,7 +106,7 @@ const CurrentMovieContainer = styled.div`
     .line {
       position: absolute;
 
-      width: 75%;
+      width: 80%;
       top: -5rem;
       height: 1px;
       left: 4rem;
