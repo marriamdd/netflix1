@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 export default function OutHeader() {
   const location = useLocation();
   const pathname = location.pathname;
-  console.log(pathname);
+
   const [showSignInButton, setShowSignInButton] = useState(true);
   useEffect(() => {
     if (pathname === "/" || pathname === "") {

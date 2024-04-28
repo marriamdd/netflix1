@@ -43,6 +43,18 @@ const PreviewContainer = styled.div`
   width: 95%;
   height: 160px;
   overflow-x: auto;
+  &::-webkit-scrollbar {
+    width: 1vw;
+  }
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: #3b3b3b;
+    width: 1vw;
+    border-radius: 3px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: black;
+    width: 1vw;
+  }
   span {
     font-size: 26.748px;
 
