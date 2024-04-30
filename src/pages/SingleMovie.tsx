@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
-import { Movie } from "../types";
+
 import Data from "../data.json";
 import AddPlayInfoSection from "../components/AddPlayInfoSection";
 export default function SingleMovie() {

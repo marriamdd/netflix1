@@ -1,4 +1,3 @@
-import { Movie } from "./../types";
 import styled from "styled-components";
 
 export const PopularContainer = styled.div`

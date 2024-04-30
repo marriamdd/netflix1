@@ -14,21 +14,19 @@ export default function MainHeader() {
     switch (item) {
       case "Movies":
         setCategory("Movie");
-        setCategoryChange(false);
+
         break;
       case "TV Series":
         setCategory("TV Series");
-        setCategoryChange(false);
         break;
       case "My List":
         setCategory("isBookmarked");
-        setCategoryChange(false);
         break;
 
       default:
         setCategory("All");
-        setCategoryChange(false);
     }
+    setCategoryChange(false);
   };
 
   const handleHomeClick = () => {

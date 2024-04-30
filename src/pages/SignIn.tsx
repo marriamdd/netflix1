@@ -1,9 +1,20 @@
 import styled from "styled-components";
 import React, { useState } from "react";
 import { Input, Label } from "../styleComponents/inputStyledComponent";
+import { ErrorStyledComponent } from "../styleComponents/Errorstylescomponent";
 export default function SignIn() {
+  const [error, setError] = useState({
+    empty: "",
+  });
   const signInFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
+    if (!gmailRegex.test(emailInput)) {
+      setError({ empty: "Email is required." });
+    }
+    setEmailInput("");
+    setPasswordInput("");
     if (emailInput && passwordInput) {
       window.location.href = "/MainPage";
     }
@@ -36,12 +47,9 @@ export default function SignIn() {
       setPasswordClick(false);
     }
   };
-
-  const handleEmail_input = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setEmailInput(e.target.value);
-  };
-  const handlePassword_input = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPasswordInput(e.target.value);
+    setError({ empty: "" });
   };
   return (
     <div>
@@ -59,13 +67,16 @@ export default function SignIn() {
             </Label>
             <Input
               value={emailInput}
-              onChange={handleEmail_input}
+              onChange={handleEmailChange}
               onMouseEnter={handleEmailClick}
               onMouseLeave={handleEmailLeave}
               name="emailORnumberInput"
               id="emailORnumberInput"
               type="text"
             />
+            {error.empty && (
+              <ErrorStyledComponent>{error.empty}</ErrorStyledComponent>
+            )}
           </div>
           <div>
             <Label
@@ -78,7 +89,7 @@ export default function SignIn() {
             </Label>
             <Input
               value={passwordInput}
-              onChange={handlePassword_input}
+              onChange={(e) => setPasswordInput(e.target.value)}
               onMouseEnter={handlePasswordClick}
               onMouseLeave={handlePasswordLeave}
               name="passwordInput"
@@ -88,15 +99,15 @@ export default function SignIn() {
           </div>
 
           <button type="submit">Sign In</button>
-        </SignInForm>
-        <div className="forgetDiv">
-          <p style={{ fontSize: "1.5rem" }}>Forget Password?</p>
-        </div>
+          <div className="forgetDiv">
+            <p style={{ fontSize: "1.5rem" }}>Forget Password?</p>
+          </div>
 
-        <div className="rememberMeDiv">
-          <input id="checkBox" type="checkBox" />
-          <label htmlFor="checkBox">Remember me</label>
-        </div>
+          <div className="rememberMeDiv">
+            <input id="checkBox" type="checkBox" />
+            <label htmlFor="checkBox">Remember me</label>
+          </div>
+        </SignInForm>
       </SignInContainer>
     </div>
   );
@@ -106,10 +117,12 @@ const SignInContainer = styled.div`
 
   height: 100vh;
   padding-top: 10rem;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   .rememberMeDiv {
     margin-top: 4rem;
-    margin-left: 2.2rem;
+    margin-right: 2.5rem;
     width: 330px;
 
     display: flex;
@@ -134,27 +147,7 @@ export const SignInForm = styled.form`
   & > div {
     position: relative;
   }
-  /* & > div input {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-    width: 330px;
-    height: 50px;
-    padding-top: 0.6rem;
-    padding-left: 2.3rem;
-    font-size: 2rem;
-    background-color: transparent;
-    border: 1px solid white;
-    border-radius: 4px;
-  } */
-  /* & > div label {
-    position: absolute;
-    top: 1.5rem;
-    left: 2.3rem;
-    font-size: 1.2rem;
-  } */
-  /* .active {
-    top: 0.3em;
-    font-size: 1rem;
-  } */
+
   & > button {
     border-radius: 4px;
     width: 330px;
