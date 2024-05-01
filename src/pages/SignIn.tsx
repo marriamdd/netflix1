@@ -2,10 +2,13 @@ import styled from "styled-components";
 import React, { useState } from "react";
 import { Input, Label } from "../styleComponents/inputStyledComponent";
 import { ErrorStyledComponent } from "../styleComponents/Errorstylescomponent";
+import { useContext } from "react";
+import { CategoryContext } from "../App";
 export default function SignIn() {
   const [error, setError] = useState({
     empty: "",
   });
+  const { login, setLogin } = useContext(CategoryContext);
   const signInFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -13,10 +16,12 @@ export default function SignIn() {
     if (!gmailRegex.test(emailInput)) {
       setError({ empty: "Email is required." });
     }
+
     setEmailInput("");
     setPasswordInput("");
     if (emailInput && passwordInput) {
       window.location.href = "/MainPage";
+      setLogin(true);
     }
   };
   const [emailInput, setEmailInput] = useState("");

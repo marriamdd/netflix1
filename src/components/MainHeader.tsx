@@ -10,22 +10,21 @@ export default function MainHeader() {
 
   const { setCategory, category, categoryChange, setCategoryChange } =
     useContext(CategoryContext);
-  const categoryClick = (item: string) => {
-    switch (item) {
-      case "Movies":
-        setCategory("Movie");
+  const categoryClick = () => {
+    // switch (item) {
+    //   case "Movies":
+    //     setCategory("Movie");
+    //     break;
+    //   case "TV Series":
+    //     setCategory("TV Series");
+    //     break;
+    //   case "My List":
+    //     setCategory("isBookmarked");
+    //     break;
 
-        break;
-      case "TV Series":
-        setCategory("TV Series");
-        break;
-      case "My List":
-        setCategory("isBookmarked");
-        break;
-
-      default:
-        setCategory("All");
-    }
+    //   default:
+    //     setCategory("All");
+    // }
     setCategoryChange(false);
   };
 
@@ -52,35 +51,80 @@ export default function MainHeader() {
                 ? "TV Series"
                 : category === "isBookmarked"
                 ? "MY List"
-                : "All"}{" "}
+                : "All"}
               <span style={{ paddingLeft: ".7rem" }}>
                 <img src="/assets/moviesIMGbase/Polygon 1.svg" alt="" />
               </span>
             </h2>
             <div className="dropdown-content">
-              {insideOptions.map((item) => (
-                <Link
-                  to={"/Category"}
-                  onClick={() => categoryClick(item)}
-                  key={Math.random()}
-                >
-                  {item}
-                </Link>
-              ))}
+              <Link
+                to={"/AllCategory"}
+                onClick={() => {
+                  setCategoryChange(false);
+                }}
+              >
+                All
+              </Link>
+              <Link
+                to={"/Movies"}
+                onClick={() => {
+                  setCategory("Movie");
+                  setCategoryChange(false);
+                }}
+              >
+                Movies
+              </Link>
+              <Link
+                to={"/TVSeries"}
+                onClick={() => {
+                  setCategory("TV Series");
+                  setCategoryChange(false);
+                }}
+              >
+                TV Series
+              </Link>
+              <Link
+                to={"/MyList"}
+                onClick={() => {
+                  setCategory("isBookmarked");
+                  setCategoryChange(false);
+                }}
+              >
+                MY List
+              </Link>
+
               <button onClick={() => setCategoryChange(false)}>X</button>
             </div>
           </div>
         ) : (
           <div>
-            {options.map((item) => (
-              <Link
-                to={"/Category"}
-                onClick={() => categoryClick(item)}
-                key={Math.random()}
-              >
-                {item}
-              </Link>
-            ))}
+            <Link
+              to={"/Movies"}
+              onClick={() => {
+                setCategory("Movie");
+                setCategoryChange(false);
+              }}
+            >
+              Movies
+            </Link>
+            <Link
+              to={"/TVSeries"}
+              onClick={() => {
+                setCategory("TV Series");
+                setCategoryChange(false);
+              }}
+            >
+              TV Series
+            </Link>
+            <Link
+              to={"/MyList"}
+              onClick={() => {
+                setCategory("isBookmarked");
+                setCategoryChange(false);
+              }}
+            >
+              MY List
+            </Link>
           </div>
         )}
       </NavLinksContainer>

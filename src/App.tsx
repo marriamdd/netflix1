@@ -18,29 +18,46 @@ import Downloads from "./pages/Downloads";
 import More from "./pages/More";
 import Category from "./pages/Category";
 import ComingSoonPage from "./pages/ComingSoonPage";
+import AllCategory from "./pages/AllCategory";
+
+import Movies from "./pages/Movies";
+import TVseries from "./pages/TVseries";
+import MyList from "./pages/MyList";
 
 export const CategoryContext = createContext<{
   category: string;
   setCategory: React.Dispatch<React.SetStateAction<string>>;
   setCategoryChange: React.Dispatch<React.SetStateAction<boolean>>;
   categoryChange: boolean;
+  login: boolean;
+  setLogin: React.Dispatch<React.SetStateAction<boolean>>;
 }>({
   category: "",
   setCategory: () => {},
   categoryChange: false,
   setCategoryChange: () => {},
+  login: false,
+
+  setLogin: () => {},
 });
 
 function App() {
   const [category, setCategory] = useState("");
   const [categoryChange, setCategoryChange] = useState(false);
-  console.log(category);
+  const [login, setLogin] = useState(false);
   return (
     <>
       {" "}
       <GlobalStyles />
       <CategoryContext.Provider
-        value={{ category, setCategory, categoryChange, setCategoryChange }}
+        value={{
+          category,
+          setCategory,
+          categoryChange,
+          setCategoryChange,
+          login,
+          setLogin,
+        }}
       >
         <BrowserRouter>
           <Routes>
@@ -57,7 +74,13 @@ function App() {
               <Route path={"/Search"} element={<Search />} />
               <Route path={"/More"} element={<More />} />
               <Route path={"/ComingSoon"} element={<ComingSoonPage />} />
-              <Route path={"/Category"} element={<Category />} />
+
+              <Route path={"/AllCategory"} element={<AllCategory />} />
+              <Route path={"/MyList"} element={<MyList />} />
+
+              <Route path={"/Movies"} element={<Movies />} />
+
+              <Route path={"/TVseries"} element={<TVseries />} />
             </Route>
           </Routes>
         </BrowserRouter>

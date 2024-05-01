@@ -6,8 +6,7 @@ import styled from "styled-components";
 import AddPlayInfoSection from "../components/AddPlayInfoSection";
 
 export default function Category() {
-  const { category, categoryChange, setCategoryChange } =
-    useContext(CategoryContext);
+  const { category, setCategoryChange } = useContext(CategoryContext);
 
   return (
     <div>

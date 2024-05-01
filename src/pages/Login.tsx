@@ -1,16 +1,18 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Input, Label } from "../styleComponents/inputStyledComponent";
 import { ErrorStyledComponent } from "../styleComponents/Errorstylescomponent";
+import { CategoryContext } from "../App";
 
 export default function Login() {
+  const { login, setLogin } = useContext(CategoryContext);
   const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
   const [input, setInput] = useState("");
   const [inputClick, setInputClick] = useState(false);
-  const [login, setLogin] = useState(false);
+
   const [error, setError] = useState({
     empty: "",
   });
@@ -29,22 +31,17 @@ export default function Login() {
     const inputValue = e.target.value;
     setInput(inputValue);
     setError({ empty: "" });
-    if (gmailRegex.test(inputValue)) {
-      setLogin(true);
-    } else {
-      setLogin(false);
-    }
   };
   const navigate = useNavigate();
   const handleGetStarted = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
   ) => {
     e.preventDefault();
-
-    if (!login) {
+    if (!gmailRegex.test(input)) {
       setInput("");
       setError({ empty: "Email is required." });
     } else {
+      setLogin(true);
       navigate("/MainPage");
     }
   };

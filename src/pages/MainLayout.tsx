@@ -1,9 +1,17 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet, useNavigate } from "react-router-dom";
 
 import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
-
-export default function MainLayout() {
+import { FC, useContext, useEffect } from "react";
+import { CategoryContext } from "../App";
+const MainLayout: FC<{}> = () => {
+  const { login } = useContext(CategoryContext);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!login) {
+      navigate("/");
+    }
+  }, []);
   return (
     <div>
       <MainHeader />
@@ -11,4 +19,5 @@ export default function MainLayout() {
       <Footer />
     </div>
   );
-}
+};
+export default MainLayout;
