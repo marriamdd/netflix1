@@ -8,7 +8,7 @@ export default function SignIn() {
   const [error, setError] = useState({
     empty: "",
   });
-  const { login, setLogin } = useContext(CategoryContext);
+  const { setLogin } = useContext(CategoryContext);
   const signInFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 

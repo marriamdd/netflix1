@@ -5,28 +5,8 @@ import { useContext } from "react";
 import { CategoryContext } from "../App";
 
 export default function MainHeader() {
-  const options = ["TV Series", "Movies", "My List"];
-  const insideOptions = ["All", "TV Series", "Movies", "My List"];
-
   const { setCategory, category, categoryChange, setCategoryChange } =
     useContext(CategoryContext);
-  const categoryClick = () => {
-    // switch (item) {
-    //   case "Movies":
-    //     setCategory("Movie");
-    //     break;
-    //   case "TV Series":
-    //     setCategory("TV Series");
-    //     break;
-    //   case "My List":
-    //     setCategory("isBookmarked");
-    //     break;
-
-    //   default:
-    //     setCategory("All");
-    // }
-    setCategoryChange(false);
-  };
 
   const handleHomeClick = () => {
     setCategory("");

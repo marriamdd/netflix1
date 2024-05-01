@@ -2,28 +2,20 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Login from "./pages/Login";
 import GlobalStyles from "./globalStyles/GlobalStyles";
-
 import SignIn from "./pages/SignIn";
-
 import MainPage from "./pages/MainPage";
-
 import Layout1 from "./pages/OutLayout";
 import Layout2 from "./pages/MainLayout";
 import { useState, createContext } from "react";
-
 import SingleMovie from "./pages/SingleMovie";
-
 import Search from "./pages/Search";
 import Downloads from "./pages/Downloads";
 import More from "./pages/More";
-import Category from "./pages/Category";
 import ComingSoonPage from "./pages/ComingSoonPage";
 import AllCategory from "./pages/AllCategory";
-
 import Movies from "./pages/Movies";
 import TVseries from "./pages/TVseries";
 import MyList from "./pages/MyList";
-
 export const CategoryContext = createContext<{
   category: string;
   setCategory: React.Dispatch<React.SetStateAction<string>>;

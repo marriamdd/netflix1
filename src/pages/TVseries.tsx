@@ -1,12 +1,10 @@
-import { CategoryContext } from "../App";
 import Data from "../data.json";
-import { useContext } from "react";
+
 import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
-import styled from "styled-components";
+
 import AddPlayInfoSection from "../components/AddPlayInfoSection";
 import CoverDiv from "../styleComponents/CoverDivStyles";
 export default function TVseries() {
-  //   const { category, setCategoryChange } = useContext(CategoryContext);
   return (
     <div>
       <CoverDiv>
