@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, json } from "react-router-dom";
 import "./App.css";
 import Login from "./pages/Login";
 import GlobalStyles from "./globalStyles/GlobalStyles";
@@ -6,7 +6,7 @@ import SignIn from "./pages/SignIn";
 import MainPage from "./pages/MainPage";
 import Layout1 from "./pages/OutLayout";
 import Layout2 from "./pages/MainLayout";
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 import SingleMovie from "./pages/SingleMovie";
 import Search from "./pages/Search";
 import Downloads from "./pages/Downloads";
@@ -36,7 +36,14 @@ export const CategoryContext = createContext<{
 function App() {
   const [category, setCategory] = useState("");
   const [categoryChange, setCategoryChange] = useState(false);
-  const [login, setLogin] = useState(false);
+
+  const storage = localStorage.getItem("login");
+  const initialLoginState = storage ? JSON.parse(storage) : false;
+  const [login, setLogin] = useState(initialLoginState);
+
+  useEffect(() => {
+    localStorage.setItem("login", JSON.stringify(login));
+  }, [login]);
   return (
     <>
       {" "}
