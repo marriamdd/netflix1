@@ -1,13 +1,32 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { CategoryContext } from "../App";
 
 export default function MainHeader() {
   const { setCategory, category, categoryChange, setCategoryChange } =
     useContext(CategoryContext);
+  const { pathname } = useLocation();
+  const endPoint = pathname.replace("/", "");
+  console.log(endPoint);
 
+  const storage = useEffect(() => {
+    switch (endPoint) {
+      case "Movies":
+        localStorage.setItem("category", "Movie");
+        break;
+      case "TVSeries":
+        localStorage.setItem("category", "TV Series");
+        break;
+      case "MYList":
+        localStorage.setItem("category", "isBookmarked");
+        break;
+      case "AllCategory":
+        localStorage.setItem("category", "All");
+        break;
+    }
+  }, [category]);
   const handleHomeClick = () => {
     setCategory("");
   };
@@ -31,7 +50,9 @@ export default function MainHeader() {
                 ? "TV Series"
                 : category === "isBookmarked"
                 ? "MY List"
-                : "All"}
+                : category === "All"
+                ? "All"
+                : ""}
               <span style={{ paddingLeft: ".7rem" }}>
                 <img src="/assets/moviesIMGbase/Polygon 1.svg" alt="" />
               </span>
@@ -40,6 +61,7 @@ export default function MainHeader() {
               <Link
                 to={"/AllCategory"}
                 onClick={() => {
+                  setCategory("All");
                   setCategoryChange(false);
                 }}
               >

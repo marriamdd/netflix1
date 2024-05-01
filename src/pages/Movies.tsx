@@ -4,6 +4,7 @@ import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer"
 
 import AddPlayInfoSection from "../components/AddPlayInfoSection";
 import CoverDiv from "../styleComponents/CoverDivStyles";
+import { useLocation } from "react-router-dom";
 export default function Movies() {
   return (
     <>

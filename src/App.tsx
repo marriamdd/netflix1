@@ -1,4 +1,11 @@
-import { BrowserRouter, Route, Routes, json } from "react-router-dom";
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  json,
+  useLocation,
+  useParams,
+} from "react-router-dom";
 import "./App.css";
 import Login from "./pages/Login";
 import GlobalStyles from "./globalStyles/GlobalStyles";
@@ -34,16 +41,18 @@ export const CategoryContext = createContext<{
 });
 
 function App() {
-  const [category, setCategory] = useState("");
   const [categoryChange, setCategoryChange] = useState(false);
-
+  const storedCategory = localStorage.getItem("category");
+  const initialCategoryState = storedCategory || "";
+  const [category, setCategory] = useState(initialCategoryState);
   const storage = localStorage.getItem("login");
   const initialLoginState = storage ? JSON.parse(storage) : false;
   const [login, setLogin] = useState(initialLoginState);
-
+  console.log("kategoria amwutas", category);
   useEffect(() => {
     localStorage.setItem("login", JSON.stringify(login));
   }, [login]);
+
   return (
     <>
       {" "}
