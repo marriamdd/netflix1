@@ -39,9 +39,10 @@ export default function Preview() {
 
 const PreviewContainer = styled.div`
   background-color: black;
-  margin: 2rem;
-  width: 95%;
-  height: 160px;
+  box-sizing: border-box;
+  padding: 2rem;
+  width: 375px;
+
   overflow-x: auto;
   &::-webkit-scrollbar {
     width: 1vw;

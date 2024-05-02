@@ -47,7 +47,7 @@ const FooterContainer = styled.div`
   bottom: 0rem;
   display: flex;
   justify-content: space-around;
-  width: 100%;
+  width: 375px;
   background-color: black;
   padding: 1rem;
   a {

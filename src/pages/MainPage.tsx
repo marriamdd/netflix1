@@ -23,7 +23,9 @@ export default function MainPage() {
     </>
   );
 }
-const MainPageContainer = styled.div``;
+const MainPageContainer = styled.div`
+  background-color: black;
+`;
 const Main = styled.main`
   padding-bottom: 9rem;
 `;

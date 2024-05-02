@@ -46,6 +46,7 @@ export default function SingleMovie() {
   );
 }
 const CurrentMovieDiv = styled.div`
+  height: 100vh;
   h1 {
     padding: 1rem 0rem 2rem 2rem;
   }

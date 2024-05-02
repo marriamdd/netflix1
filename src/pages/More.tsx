@@ -79,13 +79,14 @@ export default function More() {
 }
 
 const MoreContainer = styled.div`
-  padding-block: 7rem;
+  padding-block: 10rem;
+  height: 100vh;
   .additionalNav {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
     padding-left: 2rem;
-    padding-top: 2rem;
+    padding-top: 4rem;
     & > span {
       font-size: 12px;
     }
@@ -100,7 +101,7 @@ const MoreContainer = styled.div`
     font-weight: 500;
     line-height: 18px;
     letter-spacing: -0.18px;
-    padding-block: 2rem;
+    padding-block: 3rem;
     padding-left: 1rem;
   }
   span {
@@ -132,7 +133,7 @@ const MoreContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-around;
-
+    margin-top: 2rem;
     background: #1a1a1a;
     height: 60px;
     & > img {

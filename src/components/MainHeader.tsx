@@ -138,7 +138,7 @@ const Header2Container = styled.div<{
   categoryChange: boolean;
 }>`
   display: flex;
-  width: 100%;
+  width: 375px;
   padding: 1rem;
   align-items: center;
   justify-content: ${(props) => (props.category ? "null" : "space-between")};
@@ -183,10 +183,10 @@ const NavLinksContainer = styled.div<{ categoryChange: boolean }>`
       ? `
       .dropdown{
       
-        position:fixed;
-        left:0;
-        right:0;
-        top:0;
+        position:absolute;
+        left:0rem;
+      min-height:100vh;
+        top:-3rem;
       }
      
       .dropdown-content {
@@ -197,14 +197,12 @@ const NavLinksContainer = styled.div<{ categoryChange: boolean }>`
       text-align: start;
       align-items: center;
       justify-content:center;
-      min-width: 340px;
+      width: 375px;
       height: 100vh;
-      top: 0rem;
-      left: 0;
-      right: 0;
+     
       background-color:black;
       gap: 1rem;
-     
+    
       button{
         margin-top:60px;
         width: 70px;

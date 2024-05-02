@@ -1,5 +1,6 @@
+import { CategoryContext } from "../App";
 import Data from "../data.json";
-
+import { useContext } from "react";
 import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
 
 export default function MyList() {
@@ -8,15 +9,17 @@ export default function MyList() {
   const myListItems = Data.movies.filter((item) => item.isBookmarked);
 
   return (
-    <MoviesStyledContainer style={{ paddingTop: "10rem" }}>
-      {myListItems.map((item) => (
-        <div
-          key={Math.random()}
-          style={{
-            backgroundImage: `url(${item.thumbnail.regular.small})`,
-          }}
-        ></div>
-      ))}
-    </MoviesStyledContainer>
+    <div style={{ height: "100vh" }}>
+      <MoviesStyledContainer style={{ paddingTop: "10rem" }}>
+        {myListItems.map((item) => (
+          <div
+            key={Math.random()}
+            style={{
+              backgroundImage: `url(${item.thumbnail.regular.small})`,
+            }}
+          ></div>
+        ))}
+      </MoviesStyledContainer>
+    </div>
   );
 }

@@ -33,12 +33,11 @@ export default function OutHeader() {
 }
 
 const Header1Container = styled.header`
-  /* position: fixed; */
   position: absolute;
   padding: 2rem;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 375px;
   justify-content: space-between;
   z-index: 99999;
 
@@ -53,10 +52,4 @@ const Header1Container = styled.header`
     font-size: 1.8rem;
     text-decoration: none;
   }
-  /* .logoDiv {
-    img {
-      width: 80px;
-      height: 40px;
-    }
-  } */
 `;
