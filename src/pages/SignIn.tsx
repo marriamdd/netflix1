@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import React, { useState } from "react";
-import { Input, Label } from "../styleComponents/inputStyledComponent";
+
 import { ErrorStyledComponent } from "../styleComponents/Errorstylescomponent";
 import { useContext } from "react";
 import { CategoryContext } from "../App";
+import { Input, Label } from "../styleComponents/inputStyledComponent";
 export default function SignIn() {
   const [error, setError] = useState({
     empty: "",

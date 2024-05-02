@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import { Input, Label } from "../styleComponents/inputStyledComponent";
+
 import { ErrorStyledComponent } from "../styleComponents/Errorstylescomponent";
 import { CategoryContext } from "../App";
+import { Input, Label } from "../styleComponents/inputStyledComponent";
 
 export default function Login() {
   const { login, setLogin } = useContext(CategoryContext);
