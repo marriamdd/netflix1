@@ -1,5 +1,8 @@
 import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
+#root{
+
+}
 
 *{
     margin: 0;
@@ -11,11 +14,12 @@ const GlobalStyles = createGlobalStyle`
 }
 html{
 
-    font-size: 62.5%;
-    background-color: darkgrey;
+ font-size: 62.5%;
+background-color: darkgrey;
     display: flex;
    justify-content: center;
    align-items:  center;
+   padding: 2rem 0;
 
 }
 
@@ -24,7 +28,6 @@ body{
     color: white;
     background-color: black;
     width: 375px;
-
 
 }
 

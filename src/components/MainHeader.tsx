@@ -11,7 +11,7 @@ export default function MainHeader() {
   const endPoint = pathname.replace("/", "");
   console.log(endPoint);
 
-  const storage = useEffect(() => {
+  useEffect(() => {
     switch (endPoint) {
       case "Movies":
         localStorage.setItem("category", "Movie");
@@ -19,7 +19,7 @@ export default function MainHeader() {
       case "TVSeries":
         localStorage.setItem("category", "TV Series");
         break;
-      case "MYList":
+      case "MyList":
         localStorage.setItem("category", "isBookmarked");
         break;
       case "AllCategory":

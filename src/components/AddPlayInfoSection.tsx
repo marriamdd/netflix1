@@ -3,7 +3,7 @@ import Data from "../data.json";
 import { useParams } from "react-router-dom";
 export default function () {
   const { title } = useParams();
-  console.log(title);
+
   const handleAddToListClick = () => {
     const current = Data.movies.find(
       (item) => item.title.replaceAll("_", " ") === title?.replaceAll("_", " ")

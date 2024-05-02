@@ -33,7 +33,7 @@ const DownloadsContainer = styled.div`
   align-items: center;
   padding-block: 9rem;
   background-color: black;
-  height: 100vh;
+  /* height: 100vh; */
   margin-left: 2rem;
   .start_download {
     display: block;

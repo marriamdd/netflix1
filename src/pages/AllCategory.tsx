@@ -5,7 +5,6 @@ import CoverDiv from "../styleComponents/CoverDivStyles";
 import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
 
 export default function AllCategory() {
-  console.log("all");
   return (
     <>
       <CoverDiv>

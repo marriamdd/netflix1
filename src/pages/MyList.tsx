@@ -1,11 +1,8 @@
-import { CategoryContext } from "../App";
 import Data from "../data.json";
-import { useContext } from "react";
+
 import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
 
 export default function MyList() {
-  console.log(Data.movies[0].isBookmarked);
-  console.log("mylist");
   const myListItems = Data.movies.filter((item) => item.isBookmarked);
 
   return (
