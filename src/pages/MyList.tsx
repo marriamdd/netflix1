@@ -3,9 +3,11 @@ import Data from "../data.json";
 import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
 
 export default function MyList() {
-  let storage = localStorage.getItem("isBookmarked");
-  console.log(storage);
-  const myListItems = Data.movies.filter((item) => item.isBookmarked);
+  const storage = localStorage.getItem("isBookmarked");
+  const storagearray = storage ? JSON.parse(storage) : [];
+  const myListItems = Data.movies.filter((item) =>
+    storagearray.includes(item.title)
+  );
 
   return (
     <div style={{ height: "100vh" }}>

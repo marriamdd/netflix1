@@ -3,16 +3,24 @@ import Data from "../data.json";
 import { useParams } from "react-router-dom";
 export default function () {
   const { title } = useParams();
-
+  const storage = localStorage.getItem("isBookmarked");
+  const storagearray = storage ? JSON.parse(storage) : [];
+  console.log(storagearray);
   const handleAddToListClick = () => {
     const current = Data.movies.find(
       (item) => item.title.replaceAll("_", " ") === title?.replaceAll("_", " ")
     );
     if (current?.isBookmarked === true) {
       current.isBookmarked = !current?.isBookmarked;
+      const index = storagearray.indexOf(current.title);
+      if (index !== -1) {
+        storagearray.splice(index, 1);
+      }
     } else if (current?.isBookmarked === false) {
       current.isBookmarked = !current?.isBookmarked;
+      storagearray.push(current.title);
     }
+    localStorage.setItem("isBookmarked", JSON.stringify(storagearray));
   };
   return (
     <Container>
