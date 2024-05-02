@@ -29,6 +29,7 @@ export default function MainHeader() {
   }, [category]);
   const handleHomeClick = () => {
     setCategory("");
+    localStorage.removeItem("category");
   };
   const handleChangeCategory = () => {
     setCategoryChange(true);

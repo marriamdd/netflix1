@@ -3,6 +3,8 @@ import Data from "../data.json";
 import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
 
 export default function MyList() {
+  let storage = localStorage.getItem("isBookmarked");
+  console.log(storage);
   const myListItems = Data.movies.filter((item) => item.isBookmarked);
 
   return (
