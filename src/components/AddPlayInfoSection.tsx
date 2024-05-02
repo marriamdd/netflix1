@@ -1,34 +1,43 @@
 import styled from "styled-components";
 import Data from "../data.json";
 import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 export default function () {
   const { title } = useParams();
   const storage = localStorage.getItem("isBookmarked");
   const storagearray = storage ? JSON.parse(storage) : [];
-  console.log(storagearray);
+  const [mark, setMark] = useState(false);
   const handleAddToListClick = () => {
     const current = Data.movies.find(
       (item) => item.title.replaceAll("_", " ") === title?.replaceAll("_", " ")
     );
-    if (current?.isBookmarked === true) {
-      current.isBookmarked = !current?.isBookmarked;
-      const index = storagearray.indexOf(current.title);
-      if (index !== -1) {
-        storagearray.splice(index, 1);
-      }
-    } else if (current?.isBookmarked === false) {
-      current.isBookmarked = !current?.isBookmarked;
-      storagearray.push(current.title);
+
+    const index = storagearray.indexOf(current?.title);
+    if (index !== -1) {
+      storagearray.splice(index, 1);
+      setMark(false);
+    } else {
+      storagearray.push(current?.title);
+      setMark(true);
     }
     localStorage.setItem("isBookmarked", JSON.stringify(storagearray));
   };
+  const currentMovie = Data.movies.find(
+    (item) => item.title.replaceAll(" ", "_") === title
+  );
+  console.log("mark", mark);
   return (
     <Container>
       <div onClick={handleAddToListClick}>
-        <img
-          src="/assets/design/ant-design_plus-outlined.svg"
-          alt="plus-outlined"
-        />
+        {!mark ? (
+          <img
+            src="/assets/design/ant-design_plus-outlined.svg"
+            alt="plus-outlined"
+          />
+        ) : (
+          <img src="/assets/minus (2).png" />
+        )}
+
         <span>My List</span>
       </div>
       <div className="PlayContainer">
