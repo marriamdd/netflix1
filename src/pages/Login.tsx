@@ -98,7 +98,9 @@ const LoginSection = styled.div<{ inputClick: boolean }>`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  /* height: 100vh; */
+  height: 600px;
+
   & > div {
     display: flex;
     flex-direction: column;
@@ -106,7 +108,8 @@ const LoginSection = styled.div<{ inputClick: boolean }>`
     align-items: center;
     gap: 2rem;
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
+    height: 600px;
     flex-wrap: nowrap;
     text-align: center;
     h1 {

@@ -6,12 +6,14 @@ export const MoviesStyledContainer = styled.div`
   padding: 0rem 1rem 11rem;
   background-color: black;
   display: grid;
-  gap: 1rem;
+  /* gap: 2rem; */
+  column-gap: 1rem;
+  row-gap: 0.5rem;
 
-  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   div {
-    width: 178px;
-    height: 110px;
+    width: 170px;
+    height: 100px;
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;

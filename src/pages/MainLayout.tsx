@@ -1,5 +1,5 @@
 import { Outlet, useNavigate } from "react-router-dom";
-
+import styled from "styled-components";
 import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
 import { FC, useContext, useEffect } from "react";
@@ -13,11 +13,17 @@ const MainLayout: FC<{}> = () => {
     }
   }, []);
   return (
-    <div>
+    <MainLayoutStyle>
       <MainHeader />
       <Outlet />
       <Footer />
-    </div>
+    </MainLayoutStyle>
   );
 };
 export default MainLayout;
+
+const MainLayoutStyle = styled.div`
+  height: 600px;
+  overflow-y: auto;
+  border-radius: 30px;
+`;

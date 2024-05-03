@@ -44,8 +44,8 @@ export default function Footer() {
 }
 const FooterContainer = styled.div`
   position: fixed;
-  bottom: 0rem;
-
+  bottom: 10rem;
+  border-radius: 0px 0px 30px 30px;
   display: flex;
   justify-content: space-around;
   width: 375px;

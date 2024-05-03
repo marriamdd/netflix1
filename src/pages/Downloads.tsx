@@ -31,9 +31,11 @@ const DownloadsContainer = styled.div`
   gap: 1.5rem;
   justify-content: center;
   align-items: center;
-  padding-block: 9rem;
+  padding-block: 5rem;
   background-color: black;
-  /* height: 100vh; */
+  height: 600px;
+  overflow-y: auto;
+
   margin-left: 2rem;
   .start_download {
     display: block;

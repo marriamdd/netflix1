@@ -10,7 +10,7 @@ export default function MyList() {
   );
 
   return (
-    <div style={{ height: "100vh" }}>
+    <div style={{ height: "600px", overflow: "auto" }}>
       <MoviesStyledContainer style={{ paddingTop: "10rem" }}>
         {myListItems.map((item) => (
           <div

@@ -120,8 +120,8 @@ export default function SignIn() {
 }
 const SignInContainer = styled.div`
   background-color: black;
-
-  height: 100vh;
+  height: 600px;
+  /* height: 100vh; */
   padding-top: 10rem;
   display: flex;
   flex-direction: column;

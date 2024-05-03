@@ -3,7 +3,14 @@ import OutHeader from "../components/OutHeader";
 
 export default function OutLayout() {
   return (
-    <div>
+    <div
+      style={{
+        height: "600px",
+        overflowY: "auto",
+        borderRadius: "50px",
+        overflow: "hidden",
+      }}
+    >
       <OutHeader />
       <Outlet />
     </div>

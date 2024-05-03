@@ -58,7 +58,7 @@ export default function MainHeader() {
                 <img src="/assets/moviesIMGbase/Polygon 1.svg" alt="" />
               </span>
             </h2>
-            <div className="dropdown-content">
+            <div className="dropdown-content" style={{ height: "600px" }}>
               <Link
                 to={"/AllCategory"}
                 onClick={() => {
@@ -140,7 +140,8 @@ const Header2Container = styled.div<{
 }>`
   display: flex;
   width: 375px;
-  padding: 1rem;
+  padding-block: 1rem;
+  padding-inline: 2rem;
   align-items: center;
   justify-content: ${(props) => (props.category ? "null" : "space-between")};
   position: absolute;
@@ -179,27 +180,34 @@ const NavLinksContainer = styled.div<{ categoryChange: boolean }>`
     letter-spacing: 0.762px;
     padding-left: 1rem;
   }
+
   ${({ categoryChange }) =>
     categoryChange
       ? `
+      .current {
+    display: none;
+  }
       .dropdown{
       
         position:absolute;
         left:0rem;
-      min-height:100vh;
-        top:-3rem;
+      // min-height:100vh;
+   
+        top:0.4rem;
+      
       }
      
       .dropdown-content {
          display: flex;
       position: absolute;
       flex-direction: column;
-     
+      border-radius:30px;
       text-align: start;
       align-items: center;
       justify-content:center;
       width: 375px;
       height: 100vh;
+      overflow:hidden;
      
       background-color:black;
       gap: 1rem;

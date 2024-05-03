@@ -42,6 +42,8 @@ export default function ComingSoonPage() {
 }
 const ComingSoonContainer = styled.div`
   padding: 8rem 3rem 7rem;
+  height: 600px;
+  overflow-y: auto;
   .notificationDiv {
     padding-bottom: 1rem;
     display: flex;

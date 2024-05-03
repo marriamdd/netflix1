@@ -41,7 +41,7 @@ const PreviewContainer = styled.div`
   background-color: black;
   box-sizing: border-box;
   padding: 2rem;
-  width: 375px;
+  /* width: 375px; */
 
   overflow-x: auto;
   &::-webkit-scrollbar {

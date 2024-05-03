@@ -46,9 +46,11 @@ export default function SingleMovie() {
   );
 }
 const CurrentMovieDiv = styled.div`
-  height: 100vh;
+  height: 600px;
+  overflow-y: auto;
+  padding-bottom: 3rem;
   h1 {
-    padding: 1rem 0rem 2rem 2rem;
+    padding: 0.5rem 0rem 1.5rem 2rem;
   }
   .ratingDiv {
     width: 100%;
@@ -87,7 +89,7 @@ const CurrentMovieDiv = styled.div`
   }
 `;
 const CurrentMovieContainer = styled.div`
-  padding-top: 9rem;
+  padding-top: 8rem;
   background-color: black;
   display: flex;
   gap: 2rem;
