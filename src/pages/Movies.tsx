@@ -7,7 +7,7 @@ import CoverDiv from "../styleComponents/CoverDivStyles";
 
 export default function Movies() {
   return (
-    <Container>
+    <div>
       <CoverDiv>
         <img src="public/assets/moviesIMGbase/cover.png" alt="" />
       </CoverDiv>
@@ -26,14 +26,6 @@ export default function Movies() {
             ></div>
           ))}
       </MoviesStyledContainer>
-    </Container>
+    </div>
   );
 }
-const Container = styled.div`
-  overflow-y: auto;
-  height: 600px;
-  ::-webkit-scrollbar-track {
-    all: unset;
-    background-color: black;
-  }
-`;

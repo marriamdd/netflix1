@@ -5,9 +5,9 @@ export default function OutLayout() {
   return (
     <div
       style={{
-        height: "600px",
+        height: "650px",
         overflowY: "auto",
-        borderRadius: "50px",
+        borderRadius: "30px",
         overflow: "hidden",
       }}
     >

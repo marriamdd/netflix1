@@ -99,7 +99,7 @@ const LoginSection = styled.div<{ inputClick: boolean }>`
   background-repeat: no-repeat;
   background-size: cover;
   /* height: 100vh; */
-  height: 600px;
+  height: 650px;
 
   & > div {
     display: flex;

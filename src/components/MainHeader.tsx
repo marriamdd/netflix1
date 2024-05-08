@@ -193,7 +193,7 @@ const NavLinksContainer = styled.div<{ categoryChange: boolean }>`
         left:0rem;
       // min-height:100vh;
    
-        top:0.4rem;
+        top:0rem;
       
       }
      

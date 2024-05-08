@@ -51,7 +51,8 @@ export default function Search() {
 }
 const SearchContainer = styled.div`
   padding-block: 9rem 3rem;
-
+  background: black;
+  height: 650px;
   .foundedContainer {
     height: 370px;
     overflow-y: auto;

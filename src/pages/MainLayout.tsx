@@ -23,7 +23,7 @@ const MainLayout: FC<{}> = () => {
 export default MainLayout;
 
 const MainLayoutStyle = styled.div`
-  height: 600px;
+  height: 650px;
   overflow-y: auto;
   border-radius: 30px;
 `;

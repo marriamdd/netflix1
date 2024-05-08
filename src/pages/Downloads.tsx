@@ -32,11 +32,11 @@ const DownloadsContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding-block: 5rem;
-  background-color: black;
-  height: 600px;
+  background-color: #070707;
+  height: 650px;
   overflow-y: auto;
-
-  margin-left: 2rem;
+  width: 100%;
+  padding-left: 2rem;
   .start_download {
     display: block;
     font-size: 14.722px;

@@ -80,7 +80,7 @@ export default function More() {
 
 const MoreContainer = styled.div`
   padding-block: 10rem;
-  height: 600px;
+  height: 650px;
   overflow-y: auto;
   .additionalNav {
     display: flex;

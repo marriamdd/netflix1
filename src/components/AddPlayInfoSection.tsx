@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Data from "../data.json";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 export default function () {
   const { title } = useParams();
   const storage = localStorage.getItem("isBookmarked");
@@ -22,9 +22,9 @@ export default function () {
     }
     localStorage.setItem("isBookmarked", JSON.stringify(storagearray));
   };
-  const currentMovie = Data.movies.find(
-    (item) => item.title.replaceAll(" ", "_") === title
-  );
+  // const currentMovie = Data.movies.find(
+  //   (item) => item.title.replaceAll(" ", "_") === title
+  // );
   console.log("mark", mark);
   return (
     <Container>

@@ -25,7 +25,7 @@ export default function MainPage() {
 }
 const MainPageContainer = styled.div`
   background-color: black;
-  height: 600px;
+  height: 650px;
   overflow-y: auto;
 `;
 const Main = styled.main`

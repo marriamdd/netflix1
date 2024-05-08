@@ -46,7 +46,7 @@ export default function SingleMovie() {
   );
 }
 const CurrentMovieDiv = styled.div`
-  height: 600px;
+  height: 650px;
   overflow-y: auto;
   padding-bottom: 3rem;
   h1 {
