@@ -1,8 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
-#root{
-  
-}
+
 *{
     margin: 0;
     padding: 0;
@@ -13,6 +11,7 @@ const GlobalStyles = createGlobalStyle`
 
 ::-webkit-scrollbar {
     width: 7px; 
+    height: 7px;
 }
 ::-webkit-scrollbar-thumb {
     background-color:  #333333; 
@@ -24,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
 html{
 
  font-size: 62.5%;
-background-color: #222222;
+background-color: #141414;
     display: flex;
    justify-content: center;
    align-items:  center;

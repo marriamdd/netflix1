@@ -9,7 +9,7 @@ export default function Movies() {
   return (
     <div>
       <CoverDiv>
-        <img src="public/assets/moviesIMGbase/cover.png" alt="" />
+        <img src="/assets/moviesIMGbase/cover.png" alt="" />
       </CoverDiv>
       <AddPlayInfoSection />
       <MoviesStyledContainer>
