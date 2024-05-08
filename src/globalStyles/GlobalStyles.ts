@@ -21,7 +21,6 @@ const GlobalStyles = createGlobalStyle`
     background-color: black;
 }
 html{
-
  font-size: 62.5%;
 background-color: #141414;
     display: flex;
