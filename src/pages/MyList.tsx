@@ -1,6 +1,6 @@
 import Data from "../data.json";
 
-import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
+import { MoviesStyledContainer } from "../styleComponents/MoviesStyledContainer";
 
 export default function MyList() {
   const storage = localStorage.getItem("isBookmarked");

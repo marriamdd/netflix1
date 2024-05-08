@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 
 import { ErrorStyledComponent } from "../styleComponents/Errorstylescomponent";
 import { useContext } from "react";
 import { CategoryContext } from "../App";
-import { Input, Label } from "../styleComponents/inputStyledComponent";
+import { Input, Label } from "../styleComponents/InputStyledComponent";
 export default function SignIn() {
   const [error, setError] = useState({
     empty: "",
@@ -53,7 +53,7 @@ export default function SignIn() {
       setPasswordClick(false);
     }
   };
-  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     setEmailInput(e.target.value);
     setError({ empty: "" });
   };
@@ -95,7 +95,9 @@ export default function SignIn() {
             </Label>
             <Input
               value={passwordInput}
-              onChange={(e) => setPasswordInput(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setPasswordInput(e.target.value)
+              }
               onMouseEnter={handlePasswordClick}
               onMouseLeave={handlePasswordLeave}
               name="passwordInput"

@@ -1,6 +1,6 @@
 import Data from "../data.json";
 
-import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
+import { MoviesStyledContainer } from "../styleComponents/MoviesStyledContainer";
 
 import AddPlayInfoSection from "../components/AddPlayInfoSection";
 import CoverDiv from "../styleComponents/CoverDivStyles";

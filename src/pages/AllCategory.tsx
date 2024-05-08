@@ -2,7 +2,7 @@ import Data from "../data.json";
 
 import AddPlayInfoSection from "../components/AddPlayInfoSection";
 import CoverDiv from "../styleComponents/CoverDivStyles";
-import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
+import { MoviesStyledContainer } from "../styleComponents/MoviesStyledContainer";
 
 export default function AllCategory() {
   return (

@@ -5,7 +5,7 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { ErrorStyledComponent } from "../styleComponents/Errorstylescomponent";
 import { CategoryContext } from "../App";
-import { Input, Label } from "../styleComponents/inputStyledComponent";
+import { Input, Label } from "../styleComponents/InputStyledComponent";
 
 export default function Login() {
   const { login, setLogin } = useContext(CategoryContext);
@@ -72,17 +72,14 @@ export default function Login() {
               name="loginInput"
               id="loginInput"
               value={input}
-              onChange={(e) => handleInput(e)}
+              onChange={handleInput}
               type="email"
             />
             {error.empty && (
               <ErrorStyledComponent>{error.empty}</ErrorStyledComponent>
             )}
           </form>
-          <Link
-            to={login ? "/MainPage" : "/"}
-            onClick={(e) => handleGetStarted(e)}
-          >
+          <Link to={login ? "/MainPage" : "/"} onClick={handleGetStarted}>
             Get Started
           </Link>
         </div>
