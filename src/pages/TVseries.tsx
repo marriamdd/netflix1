@@ -8,7 +8,7 @@ export default function TVseries() {
   return (
     <div style={{ height: "650px", overflowY: "auto" }}>
       <CoverDiv>
-        <img src="public/assets/moviesIMGbase/tvcover.png" alt="" />
+        <img src="/assets/moviesIMGbase/tvcover.png" alt="" />
       </CoverDiv>
       <AddPlayInfoSection />
       <MoviesStyledContainer>
