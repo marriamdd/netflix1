@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Data from "../data.json";
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-export default function () {
+export default function AppPlayInfoSection() {
   const { title } = useParams();
   const storage = localStorage.getItem("isBookmarked");
   const storagearray = storage ? JSON.parse(storage) : [];

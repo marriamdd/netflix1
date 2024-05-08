@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import MainHeader from "../components/MainHeader";
 import { FC, useContext, useEffect } from "react";
 import { CategoryContext } from "../App";
-const MainLayout: FC<{}> = () => {
+const MainLayout: FC = () => {
   const { login } = useContext(CategoryContext);
   const navigate = useNavigate();
   useEffect(() => {

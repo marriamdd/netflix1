@@ -4,9 +4,9 @@ import styled from "styled-components";
 import Data from "../data.json";
 
 export default function Preview() {
-  let randomIds = [];
+  const randomIds: number[] = [];
   for (let i = 0; i <= 6; i++) {
-    let random = Math.floor(Math.random() * Data.movies.length + 1);
+    const random = Math.floor(Math.random() * Data.movies.length + 1);
     randomIds.push(random);
   }
   const filteredData = Data.movies.filter((item) =>
