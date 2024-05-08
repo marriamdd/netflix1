@@ -41,7 +41,7 @@ function App() {
   const storage = localStorage.getItem("login");
   const initialLoginState = storage ? JSON.parse(storage) : false;
   const [login, setLogin] = useState(initialLoginState);
-  console.log("kategoria amwutas", category);
+
   useEffect(() => {
     localStorage.setItem("login", JSON.stringify(login));
   }, [login]);

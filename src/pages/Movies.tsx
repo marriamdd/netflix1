@@ -1,5 +1,5 @@
 import Data from "../data.json";
-import styled from "styled-components";
+
 import { MoviesStyledContainer } from "../styleComponents/moviesStyledContainer";
 
 import AddPlayInfoSection from "../components/AddPlayInfoSection";

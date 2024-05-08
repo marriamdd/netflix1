@@ -9,7 +9,6 @@ export default function MainHeader() {
     useContext(CategoryContext);
   const { pathname } = useLocation();
   const endPoint = pathname.replace("/", "");
-  console.log(endPoint);
 
   useEffect(() => {
     switch (endPoint) {

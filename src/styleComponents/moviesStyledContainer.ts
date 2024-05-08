@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const MoviesStyledContainer = styled.div`
   width: 100%;
-  /* height: 100vh; */
+
   padding: 0rem 1rem 11rem;
   background-color: black;
   display: grid;
-  /* gap: 2rem; */
+
   column-gap: 1rem;
   row-gap: 0.5rem;
 

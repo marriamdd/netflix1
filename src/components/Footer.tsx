@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export default function Footer() {
   return (
-    <Footercase>
+    <FooterCase>
       <FooterContainer>
         <div>
           <Link to={"/MainPage"}>
@@ -41,10 +41,10 @@ export default function Footer() {
           <span>More</span>
         </div>
       </FooterContainer>
-    </Footercase>
+    </FooterCase>
   );
 }
-const Footercase = styled.div`
+const FooterCase = styled.div`
   position: relative;
 `;
 const FooterContainer = styled.div`
