@@ -13,7 +13,7 @@ export default function ComingSoonPage() {
       <ComingSoonMovie>
         <div>
           <img
-            src="public/assets/moviesIMGbase/coming1.jpeg"
+            src="/assets/moviesIMGbase/coming1.jpeg"
             alt="coming Soon Movie El Chapo"
           />
           <div>
@@ -26,7 +26,7 @@ export default function ComingSoonPage() {
       <ComingSoonMovie>
         <div>
           <img
-            src="public/assets/moviesIMGbase/coming2.png"
+            src="/assets/moviesIMGbase/coming2.png"
             alt="coming Soon Movie Peaky Blinders"
           />
           <div>
